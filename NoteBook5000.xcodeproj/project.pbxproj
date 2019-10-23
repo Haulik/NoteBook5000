@@ -1,0 +1,833 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3063904D235C79E1009A2E76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3063904C235C79E1009A2E76 /* AppDelegate.swift */; };
+		3063904F235C79E1009A2E76 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3063904E235C79E1009A2E76 /* SceneDelegate.swift */; };
+		30639051235C79E1009A2E76 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30639050235C79E1009A2E76 /* HomeController.swift */; };
+		30639054235C79E1009A2E76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30639052235C79E1009A2E76 /* Main.storyboard */; };
+		30639056235C79E2009A2E76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30639055235C79E2009A2E76 /* Assets.xcassets */; };
+		30639059235C79E3009A2E76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30639057235C79E2009A2E76 /* LaunchScreen.storyboard */; };
+		30639064235C79E3009A2E76 /* NoteBook5000Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30639063235C79E3009A2E76 /* NoteBook5000Tests.swift */; };
+		3063906F235C79E3009A2E76 /* NoteBook5000UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3063906E235C79E3009A2E76 /* NoteBook5000UITests.swift */; };
+		3063907D235C7B6C009A2E76 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3063907C235C7B6B009A2E76 /* GoogleService-Info.plist */; };
+		30639089235CBAFD009A2E76 /* DesingableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30639088235CBAFD009A2E76 /* DesingableView.swift */; };
+		30E330B0235D9DA900DB8648 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30E330AF235D9DA900DB8648 /* credentials.plist */; };
+		30E330B2235DBC4300DB8648 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E330B1235DBC4300DB8648 /* LoginController.swift */; };
+		30E330B4235DBC9100DB8648 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E330B3235DBC9100DB8648 /* SignUpController.swift */; };
+		65D0788D10284DEC9288E69F /* Pods_NoteBook5000Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E071A42FA36A88C2034DBAD /* Pods_NoteBook5000Tests.framework */; };
+		74D8F8B09A162CADC9314422 /* Pods_NoteBook5000_NoteBook5000UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2894932DA25100BBD24D09 /* Pods_NoteBook5000_NoteBook5000UITests.framework */; };
+		8F2F4717A3382F6DC4632007 /* Pods_NoteBook5000.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 011B498EB094BA172CCC7494 /* Pods_NoteBook5000.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		30639060235C79E3009A2E76 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 30639041235C79E1009A2E76 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 30639048235C79E1009A2E76;
+			remoteInfo = NoteBook5000;
+		};
+		3063906B235C79E3009A2E76 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 30639041235C79E1009A2E76 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 30639048235C79E1009A2E76;
+			remoteInfo = NoteBook5000;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		011B498EB094BA172CCC7494 /* Pods_NoteBook5000.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoteBook5000.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		30639049235C79E1009A2E76 /* NoteBook5000.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteBook5000.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3063904C235C79E1009A2E76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3063904E235C79E1009A2E76 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		30639050235C79E1009A2E76 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		30639053235C79E1009A2E76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		30639055235C79E2009A2E76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		30639058235C79E2009A2E76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3063905A235C79E3009A2E76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3063905F235C79E3009A2E76 /* NoteBook5000Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoteBook5000Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		30639063235C79E3009A2E76 /* NoteBook5000Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteBook5000Tests.swift; sourceTree = "<group>"; };
+		30639065235C79E3009A2E76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3063906A235C79E3009A2E76 /* NoteBook5000UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoteBook5000UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3063906E235C79E3009A2E76 /* NoteBook5000UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteBook5000UITests.swift; sourceTree = "<group>"; };
+		30639070235C79E3009A2E76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3063907C235C7B6B009A2E76 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		30639088235CBAFD009A2E76 /* DesingableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesingableView.swift; sourceTree = "<group>"; };
+		30E330AF235D9DA900DB8648 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
+		30E330B1235DBC4300DB8648 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		30E330B3235DBC9100DB8648 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
+		436868D724D5CD5B52AA3D59 /* Pods-NoteBook5000-NoteBook5000UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteBook5000-NoteBook5000UITests.release.xcconfig"; path = "Target Support Files/Pods-NoteBook5000-NoteBook5000UITests/Pods-NoteBook5000-NoteBook5000UITests.release.xcconfig"; sourceTree = "<group>"; };
+		614D606EAFBFBF5C8B5D8003 /* Pods-NoteBook5000.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteBook5000.debug.xcconfig"; path = "Target Support Files/Pods-NoteBook5000/Pods-NoteBook5000.debug.xcconfig"; sourceTree = "<group>"; };
+		90A9DDA87A3B1FF35783D3E2 /* Pods-NoteBook5000.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteBook5000.release.xcconfig"; path = "Target Support Files/Pods-NoteBook5000/Pods-NoteBook5000.release.xcconfig"; sourceTree = "<group>"; };
+		9E071A42FA36A88C2034DBAD /* Pods_NoteBook5000Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoteBook5000Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE2894932DA25100BBD24D09 /* Pods_NoteBook5000_NoteBook5000UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoteBook5000_NoteBook5000UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2BD33A506ABBFCF0ED4E963 /* Pods-NoteBook5000Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteBook5000Tests.release.xcconfig"; path = "Target Support Files/Pods-NoteBook5000Tests/Pods-NoteBook5000Tests.release.xcconfig"; sourceTree = "<group>"; };
+		B7FFB1F74996A07D29CE227F /* Pods-NoteBook5000Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteBook5000Tests.debug.xcconfig"; path = "Target Support Files/Pods-NoteBook5000Tests/Pods-NoteBook5000Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		E665E568C83B99FB9F796023 /* Pods-NoteBook5000-NoteBook5000UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteBook5000-NoteBook5000UITests.debug.xcconfig"; path = "Target Support Files/Pods-NoteBook5000-NoteBook5000UITests/Pods-NoteBook5000-NoteBook5000UITests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		30639046235C79E1009A2E76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F2F4717A3382F6DC4632007 /* Pods_NoteBook5000.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3063905C235C79E3009A2E76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65D0788D10284DEC9288E69F /* Pods_NoteBook5000Tests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30639067235C79E3009A2E76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74D8F8B09A162CADC9314422 /* Pods_NoteBook5000_NoteBook5000UITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		30639040235C79E1009A2E76 = {
+			isa = PBXGroup;
+			children = (
+				3063904B235C79E1009A2E76 /* NoteBook5000 */,
+				30639062235C79E3009A2E76 /* NoteBook5000Tests */,
+				3063906D235C79E3009A2E76 /* NoteBook5000UITests */,
+				3063904A235C79E1009A2E76 /* Products */,
+				CB9FBAF940FCA0558338D917 /* Pods */,
+				D0E61A4C3BF84A61F34BF793 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3063904A235C79E1009A2E76 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				30639049235C79E1009A2E76 /* NoteBook5000.app */,
+				3063905F235C79E3009A2E76 /* NoteBook5000Tests.xctest */,
+				3063906A235C79E3009A2E76 /* NoteBook5000UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3063904B235C79E1009A2E76 /* NoteBook5000 */ = {
+			isa = PBXGroup;
+			children = (
+				30639081235C7EF6009A2E76 /* Utils */,
+				30639080235C7EEB009A2E76 /* View */,
+				3063907F235C7EE3009A2E76 /* Model */,
+				3063907E235C7E74009A2E76 /* Controller */,
+				3063904C235C79E1009A2E76 /* AppDelegate.swift */,
+				3063904E235C79E1009A2E76 /* SceneDelegate.swift */,
+				30639052235C79E1009A2E76 /* Main.storyboard */,
+				30639055235C79E2009A2E76 /* Assets.xcassets */,
+				30639057235C79E2009A2E76 /* LaunchScreen.storyboard */,
+				3063905A235C79E3009A2E76 /* Info.plist */,
+				3063907C235C7B6B009A2E76 /* GoogleService-Info.plist */,
+				30E330AF235D9DA900DB8648 /* credentials.plist */,
+				30639088235CBAFD009A2E76 /* DesingableView.swift */,
+			);
+			path = NoteBook5000;
+			sourceTree = "<group>";
+		};
+		30639062235C79E3009A2E76 /* NoteBook5000Tests */ = {
+			isa = PBXGroup;
+			children = (
+				30639063235C79E3009A2E76 /* NoteBook5000Tests.swift */,
+				30639065235C79E3009A2E76 /* Info.plist */,
+			);
+			path = NoteBook5000Tests;
+			sourceTree = "<group>";
+		};
+		3063906D235C79E3009A2E76 /* NoteBook5000UITests */ = {
+			isa = PBXGroup;
+			children = (
+				3063906E235C79E3009A2E76 /* NoteBook5000UITests.swift */,
+				30639070235C79E3009A2E76 /* Info.plist */,
+			);
+			path = NoteBook5000UITests;
+			sourceTree = "<group>";
+		};
+		3063907E235C7E74009A2E76 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				30639050235C79E1009A2E76 /* HomeController.swift */,
+				30E330B1235DBC4300DB8648 /* LoginController.swift */,
+				30E330B3235DBC9100DB8648 /* SignUpController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3063907F235C7EE3009A2E76 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		30639080235C7EEB009A2E76 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		30639081235C7EF6009A2E76 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		CB9FBAF940FCA0558338D917 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				614D606EAFBFBF5C8B5D8003 /* Pods-NoteBook5000.debug.xcconfig */,
+				90A9DDA87A3B1FF35783D3E2 /* Pods-NoteBook5000.release.xcconfig */,
+				E665E568C83B99FB9F796023 /* Pods-NoteBook5000-NoteBook5000UITests.debug.xcconfig */,
+				436868D724D5CD5B52AA3D59 /* Pods-NoteBook5000-NoteBook5000UITests.release.xcconfig */,
+				B7FFB1F74996A07D29CE227F /* Pods-NoteBook5000Tests.debug.xcconfig */,
+				B2BD33A506ABBFCF0ED4E963 /* Pods-NoteBook5000Tests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D0E61A4C3BF84A61F34BF793 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				011B498EB094BA172CCC7494 /* Pods_NoteBook5000.framework */,
+				AE2894932DA25100BBD24D09 /* Pods_NoteBook5000_NoteBook5000UITests.framework */,
+				9E071A42FA36A88C2034DBAD /* Pods_NoteBook5000Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		30639048235C79E1009A2E76 /* NoteBook5000 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30639073235C79E3009A2E76 /* Build configuration list for PBXNativeTarget "NoteBook5000" */;
+			buildPhases = (
+				0D32D75974BFEC536F053AEF /* [CP] Check Pods Manifest.lock */,
+				30639045235C79E1009A2E76 /* Sources */,
+				30639046235C79E1009A2E76 /* Frameworks */,
+				30639047235C79E1009A2E76 /* Resources */,
+				B8272DD46B5F27D26279C7CA /* [CP] Embed Pods Frameworks */,
+				D3CBD3E974CF59278F7650B9 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NoteBook5000;
+			productName = NoteBook5000;
+			productReference = 30639049235C79E1009A2E76 /* NoteBook5000.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3063905E235C79E3009A2E76 /* NoteBook5000Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30639076235C79E3009A2E76 /* Build configuration list for PBXNativeTarget "NoteBook5000Tests" */;
+			buildPhases = (
+				9929DF989514DDF7CE41C0E9 /* [CP] Check Pods Manifest.lock */,
+				3063905B235C79E3009A2E76 /* Sources */,
+				3063905C235C79E3009A2E76 /* Frameworks */,
+				3063905D235C79E3009A2E76 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				30639061235C79E3009A2E76 /* PBXTargetDependency */,
+			);
+			name = NoteBook5000Tests;
+			productName = NoteBook5000Tests;
+			productReference = 3063905F235C79E3009A2E76 /* NoteBook5000Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		30639069235C79E3009A2E76 /* NoteBook5000UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30639079235C79E3009A2E76 /* Build configuration list for PBXNativeTarget "NoteBook5000UITests" */;
+			buildPhases = (
+				45DE8BDAB813E6AE27E248C8 /* [CP] Check Pods Manifest.lock */,
+				30639066235C79E3009A2E76 /* Sources */,
+				30639067235C79E3009A2E76 /* Frameworks */,
+				30639068235C79E3009A2E76 /* Resources */,
+				445CF6AD1EE9E0DC1069B40D /* [CP] Embed Pods Frameworks */,
+				9009CDC58389535600E8D7D9 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3063906C235C79E3009A2E76 /* PBXTargetDependency */,
+			);
+			name = NoteBook5000UITests;
+			productName = NoteBook5000UITests;
+			productReference = 3063906A235C79E3009A2E76 /* NoteBook5000UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		30639041235C79E1009A2E76 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1110;
+				LastUpgradeCheck = 1110;
+				ORGANIZATIONNAME = "Grp. 5000";
+				TargetAttributes = {
+					30639048235C79E1009A2E76 = {
+						CreatedOnToolsVersion = 11.1;
+					};
+					3063905E235C79E3009A2E76 = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = 30639048235C79E1009A2E76;
+					};
+					30639069235C79E3009A2E76 = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = 30639048235C79E1009A2E76;
+					};
+				};
+			};
+			buildConfigurationList = 30639044235C79E1009A2E76 /* Build configuration list for PBXProject "NoteBook5000" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 30639040235C79E1009A2E76;
+			productRefGroup = 3063904A235C79E1009A2E76 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				30639048235C79E1009A2E76 /* NoteBook5000 */,
+				3063905E235C79E3009A2E76 /* NoteBook5000Tests */,
+				30639069235C79E3009A2E76 /* NoteBook5000UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		30639047235C79E1009A2E76 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30639059235C79E3009A2E76 /* LaunchScreen.storyboard in Resources */,
+				30639056235C79E2009A2E76 /* Assets.xcassets in Resources */,
+				30E330B0235D9DA900DB8648 /* credentials.plist in Resources */,
+				30639054235C79E1009A2E76 /* Main.storyboard in Resources */,
+				3063907D235C7B6C009A2E76 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3063905D235C79E3009A2E76 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30639068235C79E3009A2E76 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0D32D75974BFEC536F053AEF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NoteBook5000-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		445CF6AD1EE9E0DC1069B40D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NoteBook5000-NoteBook5000UITests/Pods-NoteBook5000-NoteBook5000UITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NoteBook5000-NoteBook5000UITests/Pods-NoteBook5000-NoteBook5000UITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NoteBook5000-NoteBook5000UITests/Pods-NoteBook5000-NoteBook5000UITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		45DE8BDAB813E6AE27E248C8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NoteBook5000-NoteBook5000UITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9009CDC58389535600E8D7D9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NoteBook5000-NoteBook5000UITests/Pods-NoteBook5000-NoteBook5000UITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NoteBook5000-NoteBook5000UITests/Pods-NoteBook5000-NoteBook5000UITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NoteBook5000-NoteBook5000UITests/Pods-NoteBook5000-NoteBook5000UITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9929DF989514DDF7CE41C0E9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NoteBook5000Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8272DD46B5F27D26279C7CA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NoteBook5000/Pods-NoteBook5000-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NoteBook5000/Pods-NoteBook5000-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NoteBook5000/Pods-NoteBook5000-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D3CBD3E974CF59278F7650B9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NoteBook5000/Pods-NoteBook5000-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NoteBook5000/Pods-NoteBook5000-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NoteBook5000/Pods-NoteBook5000-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		30639045235C79E1009A2E76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30639089235CBAFD009A2E76 /* DesingableView.swift in Sources */,
+				30639051235C79E1009A2E76 /* HomeController.swift in Sources */,
+				3063904D235C79E1009A2E76 /* AppDelegate.swift in Sources */,
+				3063904F235C79E1009A2E76 /* SceneDelegate.swift in Sources */,
+				30E330B2235DBC4300DB8648 /* LoginController.swift in Sources */,
+				30E330B4235DBC9100DB8648 /* SignUpController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3063905B235C79E3009A2E76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30639064235C79E3009A2E76 /* NoteBook5000Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30639066235C79E3009A2E76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3063906F235C79E3009A2E76 /* NoteBook5000UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		30639061235C79E3009A2E76 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 30639048235C79E1009A2E76 /* NoteBook5000 */;
+			targetProxy = 30639060235C79E3009A2E76 /* PBXContainerItemProxy */;
+		};
+		3063906C235C79E3009A2E76 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 30639048235C79E1009A2E76 /* NoteBook5000 */;
+			targetProxy = 3063906B235C79E3009A2E76 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		30639052235C79E1009A2E76 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				30639053235C79E1009A2E76 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		30639057235C79E2009A2E76 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				30639058235C79E2009A2E76 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		30639071235C79E3009A2E76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		30639072235C79E3009A2E76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		30639074235C79E3009A2E76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 614D606EAFBFBF5C8B5D8003 /* Pods-NoteBook5000.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NoteBook5000/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Grp5000.NoteBook5000;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		30639075235C79E3009A2E76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90A9DDA87A3B1FF35783D3E2 /* Pods-NoteBook5000.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NoteBook5000/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Grp5000.NoteBook5000;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		30639077235C79E3009A2E76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7FFB1F74996A07D29CE227F /* Pods-NoteBook5000Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NoteBook5000Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Grp5000.NoteBook5000Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NoteBook5000.app/NoteBook5000";
+			};
+			name = Debug;
+		};
+		30639078235C79E3009A2E76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2BD33A506ABBFCF0ED4E963 /* Pods-NoteBook5000Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NoteBook5000Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Grp5000.NoteBook5000Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NoteBook5000.app/NoteBook5000";
+			};
+			name = Release;
+		};
+		3063907A235C79E3009A2E76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E665E568C83B99FB9F796023 /* Pods-NoteBook5000-NoteBook5000UITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NoteBook5000UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Grp5000.NoteBook5000UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NoteBook5000;
+			};
+			name = Debug;
+		};
+		3063907B235C79E3009A2E76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 436868D724D5CD5B52AA3D59 /* Pods-NoteBook5000-NoteBook5000UITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NoteBook5000UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Grp5000.NoteBook5000UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NoteBook5000;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		30639044235C79E1009A2E76 /* Build configuration list for PBXProject "NoteBook5000" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30639071235C79E3009A2E76 /* Debug */,
+				30639072235C79E3009A2E76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30639073235C79E3009A2E76 /* Build configuration list for PBXNativeTarget "NoteBook5000" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30639074235C79E3009A2E76 /* Debug */,
+				30639075235C79E3009A2E76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30639076235C79E3009A2E76 /* Build configuration list for PBXNativeTarget "NoteBook5000Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30639077235C79E3009A2E76 /* Debug */,
+				30639078235C79E3009A2E76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30639079235C79E3009A2E76 /* Build configuration list for PBXNativeTarget "NoteBook5000UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3063907A235C79E3009A2E76 /* Debug */,
+				3063907B235C79E3009A2E76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 30639041235C79E1009A2E76 /* Project object */;
+}

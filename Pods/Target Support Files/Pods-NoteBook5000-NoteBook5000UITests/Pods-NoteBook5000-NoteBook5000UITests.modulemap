@@ -1,0 +1,6 @@
+framework module Pods_NoteBook5000_NoteBook5000UITests {
+  umbrella header "Pods-NoteBook5000-NoteBook5000UITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

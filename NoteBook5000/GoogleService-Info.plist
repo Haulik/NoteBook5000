@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>306337490898-03du2jjq033nu1320as9ft35amli4f7n.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.306337490898-03du2jjq033nu1320as9ft35amli4f7n</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBIQ1Ik8VsqKuC_9sh3NOcxUk2lraWd-eE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>306337490898</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Grp5000.NoteBook5000</string>
+	<key>PROJECT_ID</key>
+	<string>notebook5000-6de9c</string>
+	<key>STORAGE_BUCKET</key>
+	<string>notebook5000-6de9c.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:306337490898:ios:17edbd89da6b7e2bca8a0b</string>
+	<key>DATABASE_URL</key>
+	<string>https://notebook5000-6de9c.firebaseio.com</string>
+</dict>
+</plist>
