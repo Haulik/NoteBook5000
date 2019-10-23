@@ -25,5 +25,8 @@ pod 'FirebaseUI/Auth'
 pod 'GoogleUtilities/UserDefaults'
 pod 'GoogleSignIn', '4.4.0'
 pod 'FBSDKLoginKit'
+pod 'FacebookCore'
+pod 'FacebookLogin'
+pod 'FacebookShare'
 
 end

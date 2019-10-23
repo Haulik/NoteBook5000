@@ -11,19 +11,25 @@ import Firebase
 import GoogleSignIn
 import FBSDKLoginKit
 import FBSDKCoreKit
+import FirebaseAuth
+import FacebookCore
+import FacebookLogin
+import FBSDKShareKit
 
 
-class LoginController: UIViewController, GIDSignInUIDelegate, LoginButtonDelegate {
+
+class LoginController: UIViewController, GIDSignInUIDelegate {
     @IBOutlet weak var loginEmail: UITextField!
     @IBOutlet weak var loginPassword: UITextField!
+    
+    private let readPermissions: [Permission] = [ .publicProfile, .email, .userFriends, .custom("user_posts") ]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let accessToken = AccessToken.current {
-            
-        }
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,6 +38,8 @@ class LoginController: UIViewController, GIDSignInUIDelegate, LoginButtonDelegat
         GIDSignIn.sharedInstance()?.uiDelegate = self
         GIDSignIn.sharedInstance()?.delegate = self as GIDSignInDelegate
     }
+    
+    
     
     @IBAction func loginPressed(_ sender: Any) {
         if let usr = loginEmail.text, let pwd = loginPassword.text {
@@ -57,7 +65,9 @@ class LoginController: UIViewController, GIDSignInUIDelegate, LoginButtonDelegat
     
     
     @IBAction func FacebookSignIn(_ sender: Any) {
-        firebaseFaceBookLogin(accessToken: accessToken.authentication)
+        
+       let loginManager = LoginManager()
+        loginManager.logIn(permissions: readPermissions, viewController: self, completion: didReceiveFacebookLoginResult)
     }
     
     func firebaseFaceBookLogin(accessToken: String){
@@ -76,22 +86,49 @@ class LoginController: UIViewController, GIDSignInUIDelegate, LoginButtonDelegat
     })
     
  }
-    
-    func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
-        print("User logged in")
-        
-        switch result {
-        case .failed(let err):
-            print(err)
-        case .cancelled:
-            print("cancelled")
-        case .success(let grantedPermissions, let declinedPermissions, let accessToken):
-            print("success")
-            print(accessToken)
-            firebaseFaceBookLogin(accessToken: accessToken.authenticationToken)
+    private func didReceiveFacebookLoginResult(loginResult: LoginResult) {
+        switch loginResult {
+        case .success:
+            didLoginWithFacebook()
+        case .failed(_): break
+        default: break
         }
     }
+    
+    fileprivate func didLoginWithFacebook() {
+    // Successful log in with Facebook
+    if let accessToken = AccessToken.current {
+        // If Firebase enabled, we log the user into Firebase
+       // var message: String = ""
+        let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.tokenString)
+        Auth.auth().signIn(with: credential) { (authResult, error) in
+            if let error = error {
+                print("There was an error.", error.localizedDescription)
+                    return
+                }
+                print("User was sucessfully logged in.")
+            }
+            
+            
+
+            
+          //  let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+         //   alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+         //   self.display(alertController: alertController)
+        }
+    }
+    
+    func login(credential: AuthCredential, completionBlock: @escaping (_ success: Bool) -> Void) {
+        Auth.auth().signIn(with: credential, completion: { (firebaseUser, error) in
+            print(firebaseUser!)
+            completionBlock(error == nil)
+        })
+    }
+    
+
+    
 }
+
 
 extension LoginController: GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {

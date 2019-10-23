@@ -58,7 +58,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="364" height="50"/>
                                                                 <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="50" id="wKy-Jf-7qB"/>
+                                                                    <constraint firstAttribute="height" constant="50" id="WfJ-eo-mxP"/>
                                                                 </constraints>
                                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -67,10 +67,10 @@
                                                         </subviews>
                                                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstItem="3J3-lX-Uxj" firstAttribute="leading" secondItem="SO0-A9-H1H" secondAttribute="leading" id="2am-Y3-ht8"/>
-                                                            <constraint firstAttribute="trailing" secondItem="3J3-lX-Uxj" secondAttribute="trailing" id="9OR-og-TxX"/>
-                                                            <constraint firstItem="3J3-lX-Uxj" firstAttribute="top" secondItem="SO0-A9-H1H" secondAttribute="top" id="PdQ-A6-qXE"/>
-                                                            <constraint firstAttribute="bottom" secondItem="3J3-lX-Uxj" secondAttribute="bottom" id="ogm-ja-8Ng"/>
+                                                            <constraint firstItem="3J3-lX-Uxj" firstAttribute="top" secondItem="SO0-A9-H1H" secondAttribute="top" id="1RB-q3-CjW"/>
+                                                            <constraint firstItem="3J3-lX-Uxj" firstAttribute="leading" secondItem="SO0-A9-H1H" secondAttribute="leading" id="R9T-e1-oGb"/>
+                                                            <constraint firstItem="3J3-lX-Uxj" firstAttribute="centerX" secondItem="SO0-A9-H1H" secondAttribute="centerX" id="U6e-mN-SfX"/>
+                                                            <constraint firstItem="3J3-lX-Uxj" firstAttribute="centerY" secondItem="SO0-A9-H1H" secondAttribute="centerY" id="w6U-99-OHF"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
@@ -100,10 +100,10 @@
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="18q-DY-wKi" secondAttribute="trailing" id="Cv2-j0-HQv"/>
-                                                            <constraint firstItem="18q-DY-wKi" firstAttribute="top" secondItem="5ay-da-V5T" secondAttribute="top" id="FMB-Fh-gvP"/>
-                                                            <constraint firstItem="18q-DY-wKi" firstAttribute="leading" secondItem="5ay-da-V5T" secondAttribute="leading" id="Qus-ci-Olq"/>
-                                                            <constraint firstAttribute="bottom" secondItem="18q-DY-wKi" secondAttribute="bottom" id="y7l-E6-ADz"/>
+                                                            <constraint firstItem="18q-DY-wKi" firstAttribute="centerX" secondItem="5ay-da-V5T" secondAttribute="centerX" id="93t-zg-aqv"/>
+                                                            <constraint firstItem="18q-DY-wKi" firstAttribute="leading" secondItem="5ay-da-V5T" secondAttribute="leading" id="QFK-Y8-SOk"/>
+                                                            <constraint firstItem="18q-DY-wKi" firstAttribute="top" secondItem="5ay-da-V5T" secondAttribute="top" id="g06-d5-b5L"/>
+                                                            <constraint firstItem="18q-DY-wKi" firstAttribute="centerY" secondItem="5ay-da-V5T" secondAttribute="centerY" id="l2p-KD-38q"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
@@ -174,7 +174,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="FacebookSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="efe-Ap-Wdv"/>
+                                                    <action selector="FacebookSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ws5-bG-kfB"/>
                                                     <action selector="GoogleSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0ki-Vl-jNX"/>
                                                     <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ib8-gu-vmf"/>
                                                 </connections>
@@ -228,7 +228,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="QjS-LS-YRz"/>
                     <connections>
-                        <outlet property="FBLogin" destination="2ZD-5U-cmg" id="Zow-VM-QJF"/>
                         <outlet property="loginEmail" destination="3J3-lX-Uxj" id="zaj-Bo-tMJ"/>
                         <outlet property="loginPassword" destination="18q-DY-wKi" id="Mft-Os-M5w"/>
                     </connections>
