@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         
         
+        
         //GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         //GIDSignIn.sharedInstance().delegate = self
         return true
@@ -43,15 +44,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
 
-    func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any])
-        -> Bool {
-            return GIDSignIn.sharedInstance().handle(url, sourceApplication:options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String, annotation: [:])
+   // func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any])
+   //     -> Bool {
+    //        return GIDSignIn.sharedInstance().handle(url, sourceApplication:options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String, annotation: [:])
+   // }
+    
+    
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        let handle = ApplicationDelegate.shared.application(app, open: url, options: options)
+        
+        return handle
     }
     
-    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        return ApplicationDelegate.shared.application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
-    }
-
-
+    
+    
 }
 

@@ -18,17 +18,26 @@ import FBSDKShareKit
 
 
 
-class LoginController: UIViewController, GIDSignInUIDelegate {
+class LoginController: UIViewController, GIDSignInUIDelegate, LoginButtonDelegate{
+    
+    
+    
+    
     @IBOutlet weak var loginEmail: UITextField!
     @IBOutlet weak var loginPassword: UITextField!
     
-    private let readPermissions: [Permission] = [ .publicProfile, .email, .userFriends, .custom("user_posts") ]
+  //  private let readPermissions: [Permission] = [ .publicProfile, .email, .userFriends, .custom("user_posts") ]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let loginButton = FBLoginButton()
+        view.addSubview(loginButton)
         
+        loginButton.frame = CGRect(x: 16, y: 50, width: view.frame.width - 32, height: 50)
+        
+        loginButton.delegate = self
         
     }
     
@@ -65,26 +74,74 @@ class LoginController: UIViewController, GIDSignInUIDelegate {
     
     
     @IBAction func FacebookSignIn(_ sender: Any) {
+       
+        let fbLoginManager = LoginManager()
+        fbLoginManager.logIn(permissions: ["public_profile", "email"], from: self) { (result, error) in
+            if let error = error {
+                print("Failed to login: \(error.localizedDescription)")
+                return
+            }
+            
+            guard let accessToken = AccessToken.current else {
+                print("Failed to get access token")
+                return
+            }
+            
+            let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.tokenString)
+            
+            // Perform login by calling Firebase APIs
+            Auth.auth().signIn(with: credential, completion: { (user, error) in
+                if let error = error {
+                    print("Login error: \(error.localizedDescription)")
+                    let alertController = UIAlertController(title: "Login Error", message: error.localizedDescription, preferredStyle: .alert)
+                    let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alertController.addAction(okayAction)
+                    self.present(alertController, animated: true, completion: nil)
+                    
+                    return
+                }
+                
+                if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainView") {
+                    UIApplication.shared.keyWindow?.rootViewController = viewController
+                    self.dismiss(animated: true, completion: nil)
+                }
         
-       let loginManager = LoginManager()
-        loginManager.logIn(permissions: readPermissions, viewController: self, completion: didReceiveFacebookLoginResult)
+        
+        
+        
+      /*  if let accessToken = AccessToken.current {
+                let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.tokenString)
+            Auth.auth().signIn(with: credential, completion: {(result, error) in
+                if let error = error {
+                    print("Failed to sign in with error:", error.localizedDescription)
+                    return
+                }
+                // User has signed
+                print("Firebase Login Done:")
+                if let user = Auth.auth().currentUser {
+                    print("Current firebase user is:", user)
+                }*/
+                
+        })
+            }
     }
     
     func firebaseFaceBookLogin(accessToken: String){
-        let credential = FacebookAuthProvider.credential(withAccessToken: accessToken)
-        Auth.auth().signIn(with: credential, completion: {(result, error) in
-            if let error = error {
-                print("Failed to sign in with error:", error.localizedDescription)
-                return
+        if let accessToken = AccessToken.current {
+                let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.tokenString)
+            Auth.auth().signIn(with: credential, completion: {(result, error) in
+                if let error = error {
+                    print("Failed to sign in with error:", error.localizedDescription)
+                    return
+                }
+                // User has signed
+                print("Firebase Login Done:")
+                if let user = Auth.auth().currentUser {
+                    print("Current firebase user is:", user)
+                }
+                
+        })
             }
-            // User has signed
-            print("Firebase Login Done:")
-            if let user = Auth.auth().currentUser {
-                print("Current firebase user is:", user)
-            }
-            
-    })
-    
  }
     private func didReceiveFacebookLoginResult(loginResult: LoginResult) {
         switch loginResult {
@@ -125,12 +182,25 @@ class LoginController: UIViewController, GIDSignInUIDelegate {
         })
     }
     
+    func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
+        print("logged out")
+    }
+    
+    func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
+        if error != nil {
+            print(error?.localizedDescription as Any)
+            return
+        }
+    }
+    
 
     
 }
 
 
 extension LoginController: GIDSignInDelegate {
+
+    
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         
         if let error = error {

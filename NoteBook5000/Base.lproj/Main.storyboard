@@ -156,7 +156,6 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="GoogleSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZdY-zj-TTQ"/>
-                                                    <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vtE-zT-7hR"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ZD-5U-cmg">
@@ -175,8 +174,6 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="FacebookSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ws5-bG-kfB"/>
-                                                    <action selector="GoogleSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0ki-Vl-jNX"/>
-                                                    <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ib8-gu-vmf"/>
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Grp5000" translatesAutoresizingMaskIntoConstraints="NO" id="2vN-fh-aha">
