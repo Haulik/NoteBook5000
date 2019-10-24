@@ -2,28 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>CFBundleURLTypes</key>
-    <array>
-      <dict>
-      <key>CFBundleURLSchemes</key>
-      <array>
-        <string>fb584786822262554</string>
-      </array>
-      </dict>
-    </array>
-    <key>FacebookAppID</key>
-    <string>584786822262554</string>
-    <key>FacebookDisplayName</key>
-    <string>NoteBook5000</string>
-    
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-      <string>fbapi</string>
-      <string>fb-messenger-share-api</string>
-      <string>fbauth2</string>
-      <string>fbshareextension</string>
-    </array>
-
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -46,6 +24,7 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>com.googleusercontent.apps.306337490898-03du2jjq033nu1320as9ft35amli4f7n</string>
+				<string>fb584786822262554</string>
 			</array>
 		</dict>
 		<dict>
@@ -56,6 +35,17 @@
 				<string>Grp5000.NoteBook5000</string>
 			</array>
 		</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>584786822262554</string>
+	<key>FacebookDisplayName</key>
+	<string>NoteBook5000</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-share-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
