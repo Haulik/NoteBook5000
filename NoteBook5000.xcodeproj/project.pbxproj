@@ -135,6 +135,7 @@
 				3063907F235C7EE3009A2E76 /* Model */,
 				3063907E235C7E74009A2E76 /* Controller */,
 				3063904C235C79E1009A2E76 /* AppDelegate.swift */,
+				30B8BE0D2396653C00502B1F /* TableViewController.swift */,
 				3063904E235C79E1009A2E76 /* SceneDelegate.swift */,
 				30639052235C79E1009A2E76 /* Main.storyboard */,
 				30639055235C79E2009A2E76 /* Assets.xcassets */,
@@ -172,7 +173,6 @@
 				30639050235C79E1009A2E76 /* HomeController.swift */,
 				30E330B1235DBC4300DB8648 /* LoginController.swift */,
 				30E330B3235DBC9100DB8648 /* SignUpController.swift */,
-				30B8BE0D2396653C00502B1F /* TableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
