@@ -17,6 +17,8 @@
 		3063906F235C79E3009A2E76 /* NoteBook5000UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3063906E235C79E3009A2E76 /* NoteBook5000UITests.swift */; };
 		3063907D235C7B6C009A2E76 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3063907C235C7B6B009A2E76 /* GoogleService-Info.plist */; };
 		30639089235CBAFD009A2E76 /* DesingableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30639088235CBAFD009A2E76 /* DesingableView.swift */; };
+		30B8BE0E2396653C00502B1F /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B8BE0D2396653C00502B1F /* TableViewController.swift */; };
+		30B8BE10239669C500502B1F /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B8BE0F239669C400502B1F /* CustomCell.swift */; };
 		30E330B0235D9DA900DB8648 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30E330AF235D9DA900DB8648 /* credentials.plist */; };
 		30E330B2235DBC4300DB8648 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E330B1235DBC4300DB8648 /* LoginController.swift */; };
 		30E330B4235DBC9100DB8648 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E330B3235DBC9100DB8648 /* SignUpController.swift */; };
@@ -60,6 +62,8 @@
 		30639070235C79E3009A2E76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3063907C235C7B6B009A2E76 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		30639088235CBAFD009A2E76 /* DesingableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesingableView.swift; sourceTree = "<group>"; };
+		30B8BE0D2396653C00502B1F /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		30B8BE0F239669C400502B1F /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		30E330AF235D9DA900DB8648 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
 		30E330B1235DBC4300DB8648 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		30E330B3235DBC9100DB8648 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
@@ -139,6 +143,7 @@
 				3063907C235C7B6B009A2E76 /* GoogleService-Info.plist */,
 				30E330AF235D9DA900DB8648 /* credentials.plist */,
 				30639088235CBAFD009A2E76 /* DesingableView.swift */,
+				30B8BE0F239669C400502B1F /* CustomCell.swift */,
 			);
 			path = NoteBook5000;
 			sourceTree = "<group>";
@@ -167,6 +172,7 @@
 				30639050235C79E1009A2E76 /* HomeController.swift */,
 				30E330B1235DBC4300DB8648 /* LoginController.swift */,
 				30E330B3235DBC9100DB8648 /* SignUpController.swift */,
+				30B8BE0D2396653C00502B1F /* TableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -493,10 +499,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				30639089235CBAFD009A2E76 /* DesingableView.swift in Sources */,
+				30B8BE0E2396653C00502B1F /* TableViewController.swift in Sources */,
 				30639051235C79E1009A2E76 /* HomeController.swift in Sources */,
 				3063904D235C79E1009A2E76 /* AppDelegate.swift in Sources */,
 				3063904F235C79E1009A2E76 /* SceneDelegate.swift in Sources */,
 				30E330B2235DBC4300DB8648 /* LoginController.swift in Sources */,
+				30B8BE10239669C500502B1F /* CustomCell.swift in Sources */,
 				30E330B4235DBC9100DB8648 /* SignUpController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -674,6 +682,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9FD2H4L9F6;
 				INFOPLIST_FILE = NoteBook5000/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -692,6 +701,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9FD2H4L9F6;
 				INFOPLIST_FILE = NoteBook5000/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

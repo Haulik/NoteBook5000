@@ -8,6 +8,7 @@
 
 import FirebaseUI
 import FirebaseAuth
+import Firebase
 import UIKit
 import GoogleSignIn
 
@@ -80,5 +81,15 @@ class HomeController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
 
+    @IBAction func NettoButton(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "Netto", sender: self)
+    }
+    @IBAction func KvicklyButton(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "Netto", sender: self)
+    }
+    
+    @IBAction func FøtexButton(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "Netto", sender: self)
+    }
 }
 
