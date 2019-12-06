@@ -51,6 +51,11 @@ class LoginController: UIViewController, GIDSignInUIDelegate{
     }
     
     
+    @IBAction func adminPagePressed(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "admin", sender: nil)
+    }
+    
+    
     @IBAction func FacebookSignIn(_ sender: Any) {
        
         let fbLoginManager : LoginManager = LoginManager()

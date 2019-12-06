@@ -25,6 +25,7 @@
 		65D0788D10284DEC9288E69F /* Pods_NoteBook5000Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E071A42FA36A88C2034DBAD /* Pods_NoteBook5000Tests.framework */; };
 		74D8F8B09A162CADC9314422 /* Pods_NoteBook5000_NoteBook5000UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2894932DA25100BBD24D09 /* Pods_NoteBook5000_NoteBook5000UITests.framework */; };
 		8F2F4717A3382F6DC4632007 /* Pods_NoteBook5000.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 011B498EB094BA172CCC7494 /* Pods_NoteBook5000.framework */; };
+		BCA9971E239A4BD7002717EE /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA9971D239A4BD7002717EE /* AdminViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		AE2894932DA25100BBD24D09 /* Pods_NoteBook5000_NoteBook5000UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoteBook5000_NoteBook5000UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2BD33A506ABBFCF0ED4E963 /* Pods-NoteBook5000Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteBook5000Tests.release.xcconfig"; path = "Target Support Files/Pods-NoteBook5000Tests/Pods-NoteBook5000Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B7FFB1F74996A07D29CE227F /* Pods-NoteBook5000Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteBook5000Tests.debug.xcconfig"; path = "Target Support Files/Pods-NoteBook5000Tests/Pods-NoteBook5000Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		BCA9971D239A4BD7002717EE /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
 		E665E568C83B99FB9F796023 /* Pods-NoteBook5000-NoteBook5000UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteBook5000-NoteBook5000UITests.debug.xcconfig"; path = "Target Support Files/Pods-NoteBook5000-NoteBook5000UITests/Pods-NoteBook5000-NoteBook5000UITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -173,6 +175,7 @@
 				30639050235C79E1009A2E76 /* HomeController.swift */,
 				30E330B1235DBC4300DB8648 /* LoginController.swift */,
 				30E330B3235DBC9100DB8648 /* SignUpController.swift */,
+				BCA9971D239A4BD7002717EE /* AdminViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCA9971E239A4BD7002717EE /* AdminViewController.swift in Sources */,
 				30639089235CBAFD009A2E76 /* DesingableView.swift in Sources */,
 				30B8BE0E2396653C00502B1F /* TableViewController.swift in Sources */,
 				30639051235C79E1009A2E76 /* HomeController.swift in Sources */,
@@ -682,13 +686,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9FD2H4L9F6;
+				DEVELOPMENT_TEAM = 5UWSATFD6H;
 				INFOPLIST_FILE = NoteBook5000/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Grp5000.NoteBook5000;
+				PRODUCT_BUNDLE_IDENTIFIER = Grp5000.NoteBook2000;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -701,13 +705,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9FD2H4L9F6;
+				DEVELOPMENT_TEAM = 5UWSATFD6H;
 				INFOPLIST_FILE = NoteBook5000/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Grp5000.NoteBook5000;
+				PRODUCT_BUNDLE_IDENTIFIER = Grp5000.NoteBook2000;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
