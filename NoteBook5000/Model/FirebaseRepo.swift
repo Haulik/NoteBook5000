@@ -46,6 +46,9 @@ class FirebaseRepo {
             return
         }
         print("succesfully signed user up..")
+            self.loadUserData()
+            caller.dismiss(animated: true, completion: nil)
+      
         
      }
     }
@@ -64,7 +67,7 @@ class FirebaseRepo {
             }
             
         }
-    
+        
     }
     
     

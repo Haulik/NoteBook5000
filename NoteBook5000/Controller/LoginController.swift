@@ -5,7 +5,6 @@
 //  Created by Thomas Haulik Barchager on 21/10/2019.
 //  Copyright © 2019 Grp. 5000. All rights reserved.
 //
-
 import UIKit
 import Firebase
 import GoogleSignIn
@@ -60,62 +59,10 @@ class LoginController: UIViewController, GIDSignInUIDelegate{
     
     //Facebook
     @IBAction func FacebookSignIn(_ sender: Any) {
-       
-        let fbLoginManager : LoginManager = LoginManager()
-        fbLoginManager.logIn(permissions:["email"], from: self) { (result, error) in
-            if let error = error {
-                print("Failed to login: \(error.localizedDescription)")
-                return
-            }
-            
-            guard let accessToken = AccessToken.current else {
-                print("Failed to get access token")
-                return
-            }
-            
-            let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.tokenString)
-            
-            // Perform login by calling Firebase APIs
-            Auth.auth().signIn(with: credential, completion: { (user, error) in
-                if let error = error {
-                    print("Login error: \(error.localizedDescription)")
-                    let alertController = UIAlertController(title: "Login Error", message: error.localizedDescription, preferredStyle: .alert)
-                    let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                    alertController.addAction(okayAction)
-                    self.present(alertController, animated: true, completion: nil)
-                    
-                    return
-                }
-                
-                
-                guard let uid = user?.user.uid else { return }
-                guard let email = user?.user.email else { return }
-                guard let username = user?.user.displayName else { return }
-                
-                
-                
-                
-                let values = ["email": email, "username": username]
-                
-                //fb.setDatabase(uid: uid, values: values, caller: self)
-                
-                Database.database().reference().child("users").child(uid).updateChildValues(values, withCompletionBlock: { (error, ref) in
-                    guard let navController = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController else { return }
-                    guard let controller = navController.viewControllers[0] as? HomeController else { return }
-                    
-                    self.fb.loadUserData()
-                    
-                    self.dismiss(animated: true, completion: nil)
-                
-        
-                })
-            }
-        )}
+        lg.fbLogin(caller: self)
+  
     }
-    
-    
-    }
-
+}
 
 extension LoginController: GIDSignInDelegate {
 

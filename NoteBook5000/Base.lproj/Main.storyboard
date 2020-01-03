@@ -24,10 +24,10 @@
             </objects>
             <point key="canvasLocation" x="1051" y="76"/>
         </scene>
-        <!--View Controller-->
+        <!--Admin View Controller-->
         <scene sceneID="2R3-nI-zGR">
             <objects>
-                <viewController id="vQV-Nz-Mxh" sceneMemberID="viewController">
+                <viewController id="vQV-Nz-Mxh" customClass="AdminViewController" customModule="NoteBook5000" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2jC-Zk-NNl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -54,22 +54,32 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="42"/>
                                 <state key="normal" title="Take Photo"/>
+                                <connections>
+                                    <action selector="takePhotoPressed:" destination="vQV-Nz-Mxh" eventType="touchUpInside" id="ppz-8i-T5u"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wH-qb-lmd">
                                 <rect key="frame" x="165" y="660" width="162" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="Upload"/>
+                                <connections>
+                                    <action selector="uploadPhotoPressed:" destination="vQV-Nz-Mxh" eventType="touchUpInside" id="Mup-VS-BUt"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Fje-nA-qib"/>
                     </view>
                     <navigationItem key="navigationItem" id="XED-6j-O37"/>
+                    <connections>
+                        <outlet property="ImageView" destination="m0v-1A-qmJ" id="0Ua-SQ-jYr"/>
+                        <outlet property="textField" destination="p4f-GF-6G9" id="l9w-7N-igD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Y1-VF-mUY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-209" y="804"/>
+            <point key="canvasLocation" x="-636.23188405797111" y="788.83928571428567"/>
         </scene>
         <!--Login Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -228,6 +238,16 @@
                                             </imageView>
                                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="BaA-hv-1GP">
                                                 <rect key="frame" x="25" y="685.5" width="364" height="70.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ov2-HG-ejo">
+                                                        <rect key="frame" x="48" y="20" width="44" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Admin"/>
+                                                        <connections>
+                                                            <action selector="adminPagePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yQg-te-h7K"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
                                             </view>
                                         </subviews>
                                         <edgeInsets key="layoutMargins" top="8" left="25" bottom="8" right="25"/>
@@ -274,7 +294,7 @@
                     <connections>
                         <outlet property="loginEmail" destination="3J3-lX-Uxj" id="zaj-Bo-tMJ"/>
                         <outlet property="loginPassword" destination="18q-DY-wKi" id="Mft-Os-M5w"/>
-                        <segue destination="vQV-Nz-Mxh" kind="show" identifier="GoAdmin" id="jcL-yv-2XE"/>
+                        <segue destination="vQV-Nz-Mxh" kind="show" identifier="admin" id="jcL-yv-2XE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -333,20 +353,13 @@
                                     <action selector="NettoButton:" destination="TtD-H5-smm" eventType="touchUpInside" id="Hbl-js-e2s"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login complete" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TDF-Vh-DDw">
-                                <rect key="frame" x="51" y="124" width="313" height="123"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <viewLayoutGuide key="safeArea" id="TZY-Eh-2bC"/>
                     </view>
                     <navigationItem key="navigationItem" id="gtf-1G-XiF"/>
                     <connections>
-                        <outlet property="welcomeLabel" destination="TDF-Vh-DDw" id="IiV-Fb-FRp"/>
+                        <outlet property="WelcomeLabel" destination="J21-VF-RYG" id="dQf-Ae-VYU"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="goLogin" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="dI9-HV-y9k"/>
                         <segue destination="jaB-bg-okA" kind="show" identifier="Netto" id="Yy3-Kn-vrx"/>
                     </connections>
@@ -584,7 +597,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="opl-mL-iBv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="461" y="804"/>
+            <point key="canvasLocation" x="429" y="789"/>
         </scene>
     </scenes>
     <resources>

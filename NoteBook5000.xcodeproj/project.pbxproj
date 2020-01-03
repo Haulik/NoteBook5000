@@ -10,6 +10,7 @@
 		3019373323BE718F00D1D836 /* FirebaseRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3019373223BE718F00D1D836 /* FirebaseRepo.swift */; };
 		304A683123BF21270006F2E8 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304A683023BF21270006F2E8 /* Login.swift */; };
 		304A683323BF423E0006F2E8 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304A683223BF423E0006F2E8 /* Location.swift */; };
+		304A683523BF84110006F2E8 /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304A683423BF84110006F2E8 /* AdminViewController.swift */; };
 		3063904D235C79E1009A2E76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3063904C235C79E1009A2E76 /* AppDelegate.swift */; };
 		3063904F235C79E1009A2E76 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3063904E235C79E1009A2E76 /* SceneDelegate.swift */; };
 		30639051235C79E1009A2E76 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30639050235C79E1009A2E76 /* HomeController.swift */; };
@@ -52,6 +53,7 @@
 		3019373223BE718F00D1D836 /* FirebaseRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRepo.swift; sourceTree = "<group>"; };
 		304A683023BF21270006F2E8 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		304A683223BF423E0006F2E8 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		304A683423BF84110006F2E8 /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
 		30639049235C79E1009A2E76 /* NoteBook5000.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteBook5000.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3063904C235C79E1009A2E76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3063904E235C79E1009A2E76 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				30639050235C79E1009A2E76 /* HomeController.swift */,
 				30E330B1235DBC4300DB8648 /* LoginController.swift */,
 				30E330B3235DBC9100DB8648 /* SignUpController.swift */,
+				304A683423BF84110006F2E8 /* AdminViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -507,6 +510,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				304A683523BF84110006F2E8 /* AdminViewController.swift in Sources */,
 				30639089235CBAFD009A2E76 /* DesingableView.swift in Sources */,
 				304A683323BF423E0006F2E8 /* Location.swift in Sources */,
 				304A683123BF21270006F2E8 /* Login.swift in Sources */,

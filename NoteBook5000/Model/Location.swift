@@ -13,32 +13,6 @@ class Location {
     
     let locationManager:CLLocationManager = CLLocationManager()
     
-    
-    func testing(caller:CLLocationManagerDelegate){
-        StopMonitor()
-        //authenticateUserAndConfigureView()
-        
-        // Do any additional setup after loading the view, typically from a nib.
-                
-        locationManager.delegate = caller
-                    
-        locationManager.requestAlwaysAuthorization()
-                        
-        locationManager.startUpdatingLocation()
-                    
-        locationManager.distanceFilter = 100
-                    
-                
-        let geoFenceRegion:CLCircularRegion = CLCircularRegion(center: CLLocationCoordinate2DMake(55, 13), radius: 1000, identifier: "Netto")
-                
-        locationManager.startMonitoring(for: geoFenceRegion)
-        
-        postLocalNotifications(eventTitle: "HEJ")
-        
-    }
-    
-    
-    
     func StopMonitor(){
         let monitoredRegions = locationManager.monitoredRegions
         
@@ -47,7 +21,6 @@ class Location {
         }
     }
 
-    
     func postLocalNotifications(eventTitle:String){
         let center = UNUserNotificationCenter.current()
         
@@ -71,8 +44,6 @@ class Location {
             }
         })
     }
-
-    
 }
 
 extension HomeController: CLLocationManagerDelegate {
@@ -90,19 +61,20 @@ extension HomeController: CLLocationManagerDelegate {
     //error handler
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("somthing went wrong: \(error)")
+        print(error.localizedDescription)
     }
     
     //Enter region (Føtex, kvickly, Netto)
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         print("Entered: \(region.identifier)")
-        postLocalNotifications(eventTitle: "Entered: \(region.identifier)")
+        lc.postLocalNotifications(eventTitle: "Entered: \(region.identifier)")
         
     }
     
     //Exited region (Føtex, kvickly, Netto)
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
         print("Exited: \(region.identifier)")
-        postLocalNotifications(eventTitle: "Exited: \(region.identifier)")
+        lc.postLocalNotifications(eventTitle: "Exited: \(region.identifier)")
 
     }
     
