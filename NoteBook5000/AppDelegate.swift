@@ -10,10 +10,11 @@ import UIKit
 import Firebase
 import GoogleSignIn
 import FBSDKCoreKit
+import UserNotifications
 
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -22,11 +23,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         
+        let center = UNUserNotificationCenter.current()
         
+        let Options: UNAuthorizationOptions = [.sound, .alert]
         
+        center.requestAuthorization(options: Options) { (granted, error) in
+            if error != nil {
+                print(error)
+            }
+        }
+        
+        center.delegate = self
+ 
         //GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         //GIDSignIn.sharedInstance().delegate = self
         return true
+    }
+    
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .badge, .sound])
     }
 
     // MARK: UISceneSession Lifecycle

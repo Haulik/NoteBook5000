@@ -8,60 +8,28 @@
 
 import UIKit
 import Firebase
-import GoogleSignIn
 
-class SignUpController: UIViewController, GIDSignInUIDelegate {
+class SignUpController: UIViewController {
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var createEmail: UITextField!
     @IBOutlet weak var createPassword: UITextField!
     @IBOutlet weak var createPasswordAgain: UITextField!
     
+    var fb = FirebaseRepo()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    //Register user
     @IBAction func registerPressed(_ sender: UIButton) {
         if let usr = createEmail.text, let pwd = createPassword.text, let usrname = userName.text {
             if createPassword.text == createPasswordAgain.text{
-                Auth.auth().createUser(withEmail: usr, password: pwd) { (result, error) in
-                    
-                    if let error = error {
-                        print("Failed to sign up with error: ", error.localizedDescription)
-                        self.createAlert(title: "Error", message: error.localizedDescription)
-                        return
-                    }
-                    
-                    guard let uid = result?.user.uid else { return }
-                    
-                    let values = ["email": usr, "username": usrname]
-                    
-                    Database.database().reference().child("users").child(uid).updateChildValues(values, withCompletionBlock: { (error, ref) in
-                        
-                        if let error = error {
-                            print("Failed to updata database values with error: ", error.localizedDescription)
-                            self.createAlert(title: "Error", message: error.localizedDescription)
-                            return
-                        }
-                        
-                        print("succesfully signed user up..")
-                        self.dismiss(animated: true, completion: nil)
-                    })
-                        
-        }
+                fb.registrer(usr: usr, pwd: pwd, usrname: usrname, caller: self)
+                
             }else{
-                createAlert(title: "Error", message: "Password did not match!")
+                fb.createAlert(title: "Error", message: "Password did not match!", caller: self)
+            }
         }
-    }
-}
-    
-    func createAlert (title:String, message:String){
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-        
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action) in
-            //Action
-            print("OK")
-        }))
-        
-        self.present(alert, animated: true, completion: nil)
     }
 }

@@ -14,6 +14,8 @@ import FBSDKLoginKit
 class LoginController: UIViewController, GIDSignInUIDelegate{
     @IBOutlet weak var loginEmail: UITextField!
     @IBOutlet weak var loginPassword: UITextField!
+    let userCollection = Firestore.firestore().collection("user")
+    var LG = Login()
  
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +29,9 @@ class LoginController: UIViewController, GIDSignInUIDelegate{
         GIDSignIn.sharedInstance()?.delegate = self as GIDSignInDelegate
     }
 
-    
+    //Email
     @IBAction func loginPressed(_ sender: Any) {
+        
         if let usr = loginEmail.text, let pwd = loginPassword.text {
             Auth.auth().signIn(withEmail: usr, password: pwd) { (result, error) in
                 if error == nil {
@@ -45,12 +48,16 @@ class LoginController: UIViewController, GIDSignInUIDelegate{
                 }
             }
         }
+        
+        
     }
+    //Google
     @IBAction func GoogleSignIn(_ sender: Any) {
         GIDSignIn.sharedInstance()?.signIn()
     }
     
     
+    //Facebook
     @IBAction func FacebookSignIn(_ sender: Any) {
        
         let fbLoginManager : LoginManager = LoginManager()
@@ -107,6 +114,7 @@ class LoginController: UIViewController, GIDSignInUIDelegate{
 extension LoginController: GIDSignInDelegate {
 
     
+    //GOOGLE
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         
         if let error = error {
@@ -131,7 +139,7 @@ extension LoginController: GIDSignInDelegate {
             let values = ["email": email, "username": username]
             
             Database.database().reference().child("users").child(uid).updateChildValues(values, withCompletionBlock: { (error, ref) in
-                guard let navController = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController else { return }
+                    guard let navController = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController else { return }
                 guard let controller = navController.viewControllers[0] as? HomeController else { return }
                 
                 controller.loadUserData()
