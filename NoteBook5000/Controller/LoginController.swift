@@ -15,7 +15,8 @@ class LoginController: UIViewController, GIDSignInUIDelegate{
     @IBOutlet weak var loginEmail: UITextField!
     @IBOutlet weak var loginPassword: UITextField!
     let userCollection = Firestore.firestore().collection("user")
-    var LG = Login()
+    var lg = Login()
+    var fb = FirebaseRepo()
  
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +41,7 @@ class LoginController: UIViewController, GIDSignInUIDelegate{
                     guard let navController = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController else { return }
                     guard let controller = navController.viewControllers[0] as? HomeController else { return }
                     
-                    controller.loadUserData()
+                    self.fb.loadUserData()
                         
                     self.dismiss(animated: true, completion: nil)
                 }else {
@@ -91,13 +92,18 @@ class LoginController: UIViewController, GIDSignInUIDelegate{
                 guard let email = user?.user.email else { return }
                 guard let username = user?.user.displayName else { return }
                 
+                
+                
+                
                 let values = ["email": email, "username": username]
+                
+                //fb.setDatabase(uid: uid, values: values, caller: self)
                 
                 Database.database().reference().child("users").child(uid).updateChildValues(values, withCompletionBlock: { (error, ref) in
                     guard let navController = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController else { return }
                     guard let controller = navController.viewControllers[0] as? HomeController else { return }
                     
-                    controller.loadUserData()
+                    self.fb.loadUserData()
                     
                     self.dismiss(animated: true, completion: nil)
                 
@@ -142,7 +148,7 @@ extension LoginController: GIDSignInDelegate {
                     guard let navController = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController else { return }
                 guard let controller = navController.viewControllers[0] as? HomeController else { return }
                 
-                controller.loadUserData()
+                self.fb.loadUserData()
                 
                 self.dismiss(animated: true, completion: nil)
             })

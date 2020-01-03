@@ -39,19 +39,6 @@ class Location {
     
     
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation], caller:UIViewController) {
-            
-            for currentLocation in locations{
-                print("TestingHERE: \(index): \(currentLocation)")
-                // "0: [locations]"
-            }
-        }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error, caller:UIViewController) {
-        print("somthing went wrong: \(error)")
-    }
-    
-    
     func StopMonitor(){
         let monitoredRegions = locationManager.monitoredRegions
         
@@ -59,22 +46,7 @@ class Location {
             locationManager.stopMonitoring(for: region)
         }
     }
-        
-        
-        
-    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion, caller:UIViewController) {
-        print("Entered: \(region.identifier)")
-        //postLocalNotifications(eventTitle: "fesifbes")
-        postLocalNotifications(eventTitle: "Entered: \(region.identifier)")
-        //fea.view.backgroundColor = UIColor.green
-        }
-        
-    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion, caller:UIViewController) {
-            print("Exited: \(region.identifier)")
-        postLocalNotifications(eventTitle: "Exited: \(region.identifier)")
-        //fea.view.backgroundColor = UIColor.red
-        }
-    
+
     
     func postLocalNotifications(eventTitle:String){
         let center = UNUserNotificationCenter.current()
@@ -101,6 +73,38 @@ class Location {
     }
 
     
+}
+
+extension HomeController: CLLocationManagerDelegate {
     
+    //Didupdate
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+
+        
+        for currentLocation in locations{
+            print("TestingHERE: \(index): \(currentLocation)")
+
+        }
+    }
     
+    //error handler
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("somthing went wrong: \(error)")
+    }
+    
+    //Enter region (Føtex, kvickly, Netto)
+    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        print("Entered: \(region.identifier)")
+        postLocalNotifications(eventTitle: "Entered: \(region.identifier)")
+        
+    }
+    
+    //Exited region (Føtex, kvickly, Netto)
+    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+        print("Exited: \(region.identifier)")
+        postLocalNotifications(eventTitle: "Exited: \(region.identifier)")
+
+    }
+    
+
 }
