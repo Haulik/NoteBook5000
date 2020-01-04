@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  NoteBook5000
 //
-//  Created by Thomas Haulik Barchager on 20/10/2019.
+//  Created by Grp5000 on 20/10/2019.
 //  Copyright © 2019 Grp. 5000. All rights reserved.
 //
 
@@ -16,6 +16,7 @@ import UserNotifications
 
 
 var butikSender = ""
+var butikAdmin = ""
 
 class HomeController: UIViewController, UNUserNotificationCenterDelegate  {
     @IBOutlet weak var welcomeLabel: UILabel!
@@ -69,15 +70,22 @@ class HomeController: UIViewController, UNUserNotificationCenterDelegate  {
     
     //Netto knap
     @IBAction func NettoButton(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "Netto", sender: self)
+        butikSender = "Netto"
+        segueTableView()
     }
     //Kvivkly Knap
     @IBAction func KvicklyButton(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "Netto", sender: self)
+        butikSender = "Kvickly"
+        segueTableView()
     }
     //Føtex Knap
     @IBAction func FøtexButton(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "Netto", sender: self)
+        butikSender = "Føtex"
+        segueTableView()
+    }
+    
+    func segueTableView(){
+        self.performSegue(withIdentifier: "tableView", sender: self)
     }
 
 }

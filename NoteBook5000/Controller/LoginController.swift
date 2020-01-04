@@ -2,7 +2,7 @@
 //  LoginController.swift
 //  NoteBook5000
 //
-//  Created by Thomas Haulik Barchager on 21/10/2019.
+//  Created by Grp5000 on 21/10/2019.
 //  Copyright © 2019 Grp. 5000. All rights reserved.
 //
 import UIKit

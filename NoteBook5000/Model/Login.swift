@@ -2,7 +2,7 @@
 //  Login.swift
 //  NoteBook5000
 //
-//  Created by Thomas Haulik Barchager on 03/01/2020.
+//  Created by Grp5000 on 03/01/2020.
 //  Copyright © 2020 Grp. 5000. All rights reserved.
 //
 
@@ -119,13 +119,13 @@ class Login {
                 controller.adminTest.isHidden = false
                 
                 if userEmail?.lowercased().contains("netto") == true {
-                    butikSender = "Netto"
+                    butikAdmin = "Netto"
                 }
                 if userEmail?.lowercased().contains("kvickly") == true {
-                    butikSender = "Kvickly"
+                    butikAdmin = "Kvickly"
                 }
                 if userEmail?.lowercased().contains("føtex") == true {
-                    butikSender = "Føtex"
+                    butikAdmin = "Føtex"
                 }
                 
             }

@@ -2,7 +2,7 @@
 //  Location.swift
 //  NoteBook5000
 //
-//  Created by Thomas Haulik Barchager on 03/01/2020.
+//  Created by Grp5000 on 03/01/2020.
 //  Copyright © 2020 Grp. 5000. All rights reserved.
 //
 

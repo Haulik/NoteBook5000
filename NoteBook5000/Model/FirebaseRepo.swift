@@ -2,7 +2,7 @@
 //  FirebaseRepo.swift
 //  NoteBook5000
 //
-//  Created by Thomas Haulik Barchager on 02/01/2020.
+//  Created by Grp5000 on 02/01/2020.
 //  Copyright © 2020 Grp. 5000. All rights reserved.
 //
 
@@ -79,26 +79,42 @@ class FirebaseRepo {
         
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    //Loader Username fra database (virker ikke)
-    /*
-    func loadData(uid:String, caller:UIViewController) {
-        Firestore.firestore().collection("user").document(uid).getDocument {(document, error) in
-            if let document = document, document.exists {
-                let username = document.get("username") as! String
-                let ef=HomeController()
-                ef.setUserData(username: username)
+    func startNoteListener(navController:UINavigationController) {
+        print("startNoteListener called")
+        guard let controller = navController.viewControllers[1] as? TableViewController else {return}
+        Firestore.firestore().collection(butikSender).addSnapshotListener({ (snapshot, error) in
+            print("received snapshot")
+            controller.data.removeAll()
+            for document in snapshot!.documents {
+
+                if let tekst = document.data()["tekst"] as? String,
+                let imageName = document.data()["image"] as? String{
+                    self.downloadImage(filename: imageName, note: tekst, navController: navController)
+                }
             }
+            
+        })
+        
+    }
+    
+    func downloadImage(filename:String, note:String, navController:UINavigationController)  {
+        // Create a reference with an initial file path and name
+        let pathReference = Storage.storage().reference(withPath: filename)
+        guard let controller = navController.viewControllers[1] as? TableViewController else {return}
+        var image:UIImage?
+        
+        pathReference.getData(maxSize: 4000*4000) { (data, error) in
+            if error != nil {
+                print("error downloading file \(error.debugDescription)")
+            }else{
+                image = UIImage(data: data!)
+                controller.data.append(CellData.init(image: image, message: note, imageTekst: "Test"))
+                print("success in downloading image \(image?.size)")
+                
+            }
+            controller.tableView.reloadData()
         }
     }
-    */
     
     
     //laver en popup, med en "ok" knap

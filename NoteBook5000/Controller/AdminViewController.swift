@@ -2,7 +2,7 @@
 //  AdminViewController.swift
 //  NoteBook5000
 //
-//  Created by Thomas Haulik Barchager on 03/01/2020.
+//  Created by Grp5000 on 03/01/2020.
 //  Copyright © 2020 Grp. 5000. All rights reserved.
 //
 
@@ -42,10 +42,12 @@ class AdminViewController: UIViewController, UINavigationControllerDelegate, UII
     
     @IBAction func uploadPhotoPressed(_ sender: UIButton) {
         let randomID = UUID.init().uuidString
-        let uploadRef = Storage.storage().reference(withPath: "Picture/\(butikSender)/\(randomID).jpg")
+        let imagePath = "Picture/\(butikAdmin)/\(randomID).jpg"
+        let uploadRef = Storage.storage().reference(withPath: imagePath)
+        
         guard let imageData =  ImageView.image?.jpegData(compressionQuality: 0.75) else {return}
         let uploadMetadata = StorageMetadata.init()
-        let taskReference = uploadRef.putData(imageData, metadata: uploadMetadata) { (downloadMetadata, error) in
+        uploadRef.putData(imageData, metadata: uploadMetadata) { (downloadMetadata, error) in
             if let error = error {
                 print("Oh no, something went wrong! \(error.localizedDescription)")
                 return
@@ -62,8 +64,25 @@ class AdminViewController: UIViewController, UINavigationControllerDelegate, UII
                     self.textField.text = url.absoluteString
                 }
             }
+            self.uploadTekst(imagePath: imagePath)
         }
          
         }
+    
+    func uploadTekst(imagePath:String){
+        
+        if let messageBody = textField.text {
+            Firestore.firestore().collection(butikAdmin).addDocument(data: ["tekst": messageBody, "image": imagePath ]) { (error) in
+                if let error = error{
+                    print("There was an error saving data to Firestore, \(error.localizedDescription)")
+                } else {
+                    print("Saved data")
+                }
+            }
+        }
+    }
+    
+    
+    
         
     }
