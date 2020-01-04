@@ -117,6 +117,17 @@ class Login {
             DispatchQueue.main.async {
                 guard let controller = navController.viewControllers[0] as? HomeController else {return}
                 controller.adminTest.isHidden = false
+                
+                if userEmail?.lowercased().contains("netto") == true {
+                    butikSender = "Netto"
+                }
+                if userEmail?.lowercased().contains("kvickly") == true {
+                    butikSender = "Kvickly"
+                }
+                if userEmail?.lowercased().contains("føtex") == true {
+                    butikSender = "Føtex"
+                }
+                
             }
             
         }

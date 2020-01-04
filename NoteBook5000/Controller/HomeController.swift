@@ -69,17 +69,14 @@ class HomeController: UIViewController, UNUserNotificationCenterDelegate  {
     
     //Netto knap
     @IBAction func NettoButton(_ sender: UIButton) {
-        butikSender = "Netto"
         self.performSegue(withIdentifier: "Netto", sender: self)
     }
     //Kvivkly Knap
     @IBAction func KvicklyButton(_ sender: UIButton) {
-        butikSender = "Kvickly"
         self.performSegue(withIdentifier: "Netto", sender: self)
     }
     //Føtex Knap
     @IBAction func FøtexButton(_ sender: UIButton) {
-        butikSender = "Føtex"
         self.performSegue(withIdentifier: "Netto", sender: self)
     }
 

@@ -12,6 +12,14 @@ import UIKit
 class CustomCell: UITableViewCell {
     var message : String?
     var mainImage : UIImage?
+    var imageTekst : String?
+    
+   /* init(tekst:String, image:String, imageObj:UIImage? = nil) {
+       // self.titel = titel
+        self.message = tekst
+        self.imageTekst = image
+        self.mainImage = imageObj
+    }*/
     
     var messageView : UITextView = {
         var textView = UITextView()
