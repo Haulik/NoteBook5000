@@ -16,32 +16,14 @@ class Login {
     var fb = FirebaseRepo()
     var userName = ""
     
-    
-    //Email login (Not done)
-    func emailLogin(usr:String, pwd:String, caller:UIViewController) {
-        Auth.auth().signIn(withEmail: usr, password: pwd) { (result, error) in
-            if error == nil {
-                print("user logged in")
-                
-                guard let navController = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController else { return }
-                guard let controller = navController.viewControllers[0] as? HomeController else { return }
-                
-                //controller.loadUserData()
-                    
-                caller.dismiss(animated: true, completion: nil)
-            }else {
-                print("some error during \(error.debugDescription)")
-            }
-        }
-    
-    }
-    
-    
-    
     //logger ud med en ja nej pop op
-    func signOut(caller:UIViewController){
+    func signOut(caller:UIViewController, navController:UINavigationController){
+        
+
+        guard let controller = navController.viewControllers[0] as? HomeController else {return}
+        
         let title2 = "Sign out?"
-        let message2 = "Are you sure you wanna sign out \(self.userName)?"
+        let message2 = "Are you sure you wanna sign out \(controller.userName)?"
         let alert = UIAlertController(title: title2, message: message2, preferredStyle: UIAlertController.Style.alert)
         
           
@@ -49,9 +31,7 @@ class Login {
         alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: { (action) in
             do {
                 try Auth.auth().signOut()
-                //caller.welcomeLabel.text = "Logget ud"
-                //let home = HomeController()
-               // home.welcomeLabel.text = "Logget ud"
+                controller.welcomeLabel.text = "Log off"
                 caller.performSegue(withIdentifier: "goLogin", sender: self)
                 print("User: \(self.userName) logged off")
               } catch let error {
@@ -67,31 +47,23 @@ class Login {
           caller.present(alert, animated: true, completion: nil)
     }
     
-    
-    //Email
-   /* func emailLogin(caller:UIViewController){
+    //Email login
+    func emailLogin(usr:String, pwd:String, caller:UIViewController){
         
-        if let usr = loginEmail.text, let pwd = loginPassword.text {
-            Auth.auth().signIn(withEmail: usr, password: pwd) { (result, error) in
-                if error == nil {
-                    print("user logged in")
+        Auth.auth().signIn(withEmail: usr, password: pwd) { (result, error) in
+            if error == nil {
+                print("user logged in")
+ 
+                self.fb.loadUserData()
                     
-                    guard let navController = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController else { return }
-                    guard let controller = navController.viewControllers[0] as? HomeController else { return }
-                    
-                    self.fb.loadUserData()
-                        
-                    self.dismiss(animated: true, completion: nil)
-                }else {
-                    print("some error during \(error.debugDescription)")
-                }
+                caller.dismiss(animated: true, completion: nil)
+            }else {
+                print("some error during \(error.debugDescription)")
             }
         }
-    } */
-    
-    
-    
-    //Facebook
+    }
+
+    //Facebook login
     func fbLogin(caller:UIViewController){
         let fbLoginManager : LoginManager = LoginManager()
         fbLoginManager.logIn(permissions:["email"], from: caller) { (result, error) in
@@ -117,7 +89,8 @@ class Login {
                           
                 return
             }
-
+            
+            //Gør klar til til set data
             guard let uid = user?.user.uid else { return }
             guard let email = user?.user.email else { return }
             guard let username = user?.user.displayName else { return }
@@ -126,8 +99,8 @@ class Login {
 
             self.fb.setDatabase(uid: uid, values: values, caller: caller)
 
-                  }
-    )}
+            }
+        )}
     }
 
     
@@ -152,3 +125,33 @@ class Login {
 
 }
 
+extension LoginController: GIDSignInDelegate {
+
+    //GOOGLE
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        
+        if let error = error {
+            print("Failed to sign in with error:", error)
+            return
+        }
+        
+        guard let authentication = user.authentication else { return }
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
+        
+        Auth.auth().signIn(with: credential) { (result, error) in
+            
+            if let error = error {
+                print("Failed to sign in and retrieve data with error:", error)
+                return
+            }
+            
+            guard let uid = result?.user.uid else { return }
+            guard let email = result?.user.email else { return }
+            guard let username = result?.user.displayName else { return }
+            
+            let values = ["email": email, "username": username, "role":"Normal"]
+            
+            self.fb.setDatabase(uid: uid, values: values, caller: self)
+        }
+    }
+}

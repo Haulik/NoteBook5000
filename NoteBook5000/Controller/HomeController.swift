@@ -14,9 +14,12 @@ import GoogleSignIn
 import CoreLocation
 import UserNotifications
 
+
+var butikSender = 0
+
 class HomeController: UIViewController, UNUserNotificationCenterDelegate  {
     @IBOutlet weak var welcomeLabel: UILabel!
-    //var userName = ""
+    var userName = ""
     let locationManager:CLLocationManager = CLLocationManager()
     var lg = Login()
     var lc = Location()
@@ -41,22 +44,27 @@ class HomeController: UIViewController, UNUserNotificationCenterDelegate  {
         locationManager.startMonitoring(for: geoFenceRegion3)
 
     }
+    
 
     //Logger ud
     @IBAction func signOut(_ sender: Any) {
-        lg.signOut(caller: self)
+        guard let navController = navigationController else {return}
+        lg.signOut(caller: self, navController: navController)
     }
     
     //Netto knap
     @IBAction func NettoButton(_ sender: UIButton) {
+        butikSender = 0
         self.performSegue(withIdentifier: "Netto", sender: self)
     }
     //Kvivkly Knap
     @IBAction func KvicklyButton(_ sender: UIButton) {
+        butikSender = 1
         self.performSegue(withIdentifier: "Netto", sender: self)
     }
     //Føtex Knap
     @IBAction func FøtexButton(_ sender: UIButton) {
+        butikSender = 2
         self.performSegue(withIdentifier: "Netto", sender: self)
     }
 

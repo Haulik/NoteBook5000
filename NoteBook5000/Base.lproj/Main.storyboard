@@ -22,7 +22,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dIS-Eo-tzN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1051" y="76"/>
+            <point key="canvasLocation" x="1126" y="76"/>
         </scene>
         <!--Admin View Controller-->
         <scene sceneID="2R3-nI-zGR">
@@ -243,9 +243,6 @@
                                                         <rect key="frame" x="48" y="20" width="44" height="30"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <state key="normal" title="Admin"/>
-                                                        <connections>
-                                                            <action selector="adminPagePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yQg-te-h7K"/>
-                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </view>
@@ -359,7 +356,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="gtf-1G-XiF"/>
                     <connections>
-                        <outlet property="WelcomeLabel" destination="J21-VF-RYG" id="dQf-Ae-VYU"/>
+                        <outlet property="welcomeLabel" destination="J21-VF-RYG" id="687-9f-MPJ"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="goLogin" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="dI9-HV-y9k"/>
                         <segue destination="jaB-bg-okA" kind="show" identifier="Netto" id="Yy3-Kn-vrx"/>
                     </connections>

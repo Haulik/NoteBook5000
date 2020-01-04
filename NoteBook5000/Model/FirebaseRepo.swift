@@ -15,7 +15,6 @@ class FirebaseRepo {
     let userCollection = Firestore.firestore().collection("user")
 
     
-
     //SignUp
     func registrer(usr:String, pwd:String, usrname:String, caller: UIViewController) {
         
@@ -30,14 +29,14 @@ class FirebaseRepo {
                         
             let values = ["email": usr, "username": usrname, "role": "Normal"]
                         
-            self.setDatabase(uid: uid, values: values, caller: caller)
+            self.setDatabase(uid: uid, values: values, caller: caller, emailRegistrer: true)
    
         }
                                              
     }
 
     // Sender data op til databasen
-    func setDatabase(uid:String, values:[String:Any], caller:UIViewController){
+    func setDatabase(uid:String, values:[String:Any], caller:UIViewController, emailRegistrer: Bool? = false){
         
         self.userCollection.document(uid).setData(values) { error in
         if let error = error {
@@ -46,22 +45,32 @@ class FirebaseRepo {
             return
         }
         print("succesfully signed user up..")
-            self.loadUserData()
+        self.loadUserData()
+        if emailRegistrer == false {
             caller.dismiss(animated: true, completion: nil)
-      
-        
+        }else{
+            caller.view.window!.rootViewController?.dismiss(animated: true, completion: nil)
+        }
+    
      }
     }
     
     
     func loadUserData(){
         guard let uid = Auth.auth().currentUser?.uid else { return }
+        
         Firestore.firestore().collection("user").document(uid).getDocument {(document, error) in
             if let document = document, document.exists {
                 let username = document.get("username") as! String
+                
+                guard let navController = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController else { return }
+                guard let controller = navController.viewControllers[0] as? HomeController else { return }
+                
+                controller.welcomeLabel.text = "Welcome \(username)"
                 //self.welcomeLabel.text = "Welcome \(username)"
-                //self.userName = username
+                controller.userName = username
                 print(username)
+                
             }else{
                 print("Say what? \(error.debugDescription)")
             }

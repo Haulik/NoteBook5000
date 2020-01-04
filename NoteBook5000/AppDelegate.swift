@@ -15,12 +15,14 @@ import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
-
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        //Google
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+        
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         
         let center = UNUserNotificationCenter.current()

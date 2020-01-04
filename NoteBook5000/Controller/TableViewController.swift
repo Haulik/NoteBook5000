@@ -18,6 +18,7 @@ struct CellData {
 class TableViewController: UITableViewController {
 
     var data = [CellData]()
+    let semaphore = DispatchSemaphore(value: 0)
     
 
     
@@ -38,17 +39,56 @@ class TableViewController: UITableViewController {
             }
         } */
         
-        
-        data = [CellData.init(image: UIImage(named: "Fugl"), message: "Jonathan is that you?"), CellData.init(image: UIImage(named: "Jeudan"), message: "How not to get fired"), CellData.init(image: UIImage(named: "Jeudan"), message: "How?"), CellData.init(image: UIImage(named: "Jeudan"), message: "How not to get fired")]
-        
         self.tableView.register(CustomCell.self, forCellReuseIdentifier: "custom")
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 150
-
         
     }
-
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if butikSender == 0 {
+            print("netto")
+            //Do something
+            data = [CellData.init(image: UIImage(named: "Fugl"), message: "Jonathan is that you?"), CellData.init(image: UIImage(named: "Jeudan"), message: "How not to get fired"), CellData.init(image: UIImage(named: "Jeudan"), message: "How?"), CellData.init(image: UIImage(named: "Jeudan"), message: "How not to get fired")]
+            semaphore.signal()
+ 
+        }
+        else if butikSender == 1 {
+            print("Kvikly")
+            //Do somthing
+            data = [CellData.init(image: UIImage(named: "Fugl"), message: "Thomas is that you?"), CellData.init(image: UIImage(named: "Jeudan"), message: "How not to get fired"), CellData.init(image: UIImage(named: "Jeudan"), message: "How?"), CellData.init(image: UIImage(named: "Jeudan"), message: "How not to get fired")]
+            semaphore.signal()
+        }
+        else if butikSender == 2 {
+            print("Føtex")
+            //Do something
+            hej()
+        }
+        //semaphore.wait()
+
+    }
+    
+    
+    func LoadPicture(){
+        let storageRef = Storage.storage().reference(withPath: "Picture/96E6548F-4C79-4BD3-B34B-DFCE56A309BE.jpg")
+        storageRef.getData(maxSize: 6 * 1024 * 1024) { [weak self] (data, error) in
+            if let error = error {
+                print("Something went wrong: \(error.localizedDescription)")
+                return
+            }
+            if let data = data{
+               // self?.dataImage.image = UIImage(data: data)
+                let pic = UIImage(data: data)
+                self?.data = [CellData.init(image: pic, message: "Gustav is that you?"), CellData.init(image: UIImage(named: "Jeudan"), message: "How not to get fired"), CellData.init(image: UIImage(named: "Jeudan"), message: "How?"), CellData.init(image: UIImage(named: "Jeudan"), message: "How not to get fired")]
+                print("test")
+                
+                
+            }
+            self?.tableView.reloadData()
+        }
+        //semaphore.signal()
+    }
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
