@@ -19,19 +19,22 @@ var butikSender = 0
 
 class HomeController: UIViewController, UNUserNotificationCenterDelegate  {
     @IBOutlet weak var welcomeLabel: UILabel!
+    @IBOutlet weak var adminTest: UIButton!
+    
+    
     var userName = ""
     let locationManager:CLLocationManager = CLLocationManager()
     var lg = Login()
     var lc = Location()
     var fb = FirebaseRepo()
+    
     let geoFenceRegion:CLCircularRegion = CLCircularRegion(center: CLLocationCoordinate2DMake(44, 13), radius: 1000, identifier: "Netto")
     let geoFenceRegion2:CLCircularRegion = CLCircularRegion(center: CLLocationCoordinate2DMake(55, 13), radius: 1000, identifier: "Føtex")
     let geoFenceRegion3:CLCircularRegion = CLCircularRegion(center: CLLocationCoordinate2DMake(66, 13), radius: 1000, identifier: "Kvickly")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        lg.authenticateUserAndConfigureView(caller: self)
+        //lg.authenticateUserAndConfigureView(caller: self, navController: navController)
         lc.StopMonitor()
         
         locationManager.delegate = self
@@ -43,6 +46,18 @@ class HomeController: UIViewController, UNUserNotificationCenterDelegate  {
         locationManager.startMonitoring(for: geoFenceRegion2)
         locationManager.startMonitoring(for: geoFenceRegion3)
 
+    }
+        
+    @IBAction func adminButton(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "goAdmin", sender: self)
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard let navController = navigationController else {return}
+        adminTest.isHidden = true
+        lg.authenticateUserAndConfigureView(caller: self, navController: navController)
     }
     
 

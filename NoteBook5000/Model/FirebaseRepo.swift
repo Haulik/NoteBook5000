@@ -45,7 +45,7 @@ class FirebaseRepo {
             return
         }
         print("succesfully signed user up..")
-        self.loadUserData()
+        //self.loadUserData()
         if emailRegistrer == false {
             caller.dismiss(animated: true, completion: nil)
         }else{

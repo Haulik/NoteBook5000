@@ -79,7 +79,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Y1-VF-mUY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-636.23188405797111" y="788.83928571428567"/>
+            <point key="canvasLocation" x="1922" y="816"/>
         </scene>
         <!--Login Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -291,7 +291,6 @@
                     <connections>
                         <outlet property="loginEmail" destination="3J3-lX-Uxj" id="zaj-Bo-tMJ"/>
                         <outlet property="loginPassword" destination="18q-DY-wKi" id="Mft-Os-M5w"/>
-                        <segue destination="vQV-Nz-Mxh" kind="show" identifier="admin" id="jcL-yv-2XE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -350,21 +349,30 @@
                                     <action selector="NettoButton:" destination="TtD-H5-smm" eventType="touchUpInside" id="Hbl-js-e2s"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lxO-I6-xye">
+                                <rect key="frame" x="185" y="598" width="44" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Admin"/>
+                                <connections>
+                                    <action selector="adminButton:" destination="TtD-H5-smm" eventType="touchUpInside" id="d6i-dv-R9P"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <viewLayoutGuide key="safeArea" id="TZY-Eh-2bC"/>
                     </view>
                     <navigationItem key="navigationItem" id="gtf-1G-XiF"/>
                     <connections>
+                        <outlet property="adminTest" destination="lxO-I6-xye" id="wWt-dh-5SL"/>
                         <outlet property="welcomeLabel" destination="J21-VF-RYG" id="687-9f-MPJ"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="goLogin" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="dI9-HV-y9k"/>
                         <segue destination="jaB-bg-okA" kind="show" identifier="Netto" id="Yy3-Kn-vrx"/>
-                        <segue destination="vQV-Nz-Mxh" kind="presentation" identifier="goAdmin" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="APJ-BG-SPm"/>
+                        <segue destination="vQV-Nz-Mxh" kind="show" identifier="goAdmin" id="APJ-BG-SPm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ehl-C2-lX6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1922" y="76"/>
+            <point key="canvasLocation" x="1921.7391304347827" y="75.669642857142847"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="rr6-L3-8Mg">
@@ -595,13 +603,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="opl-mL-iBv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="429" y="789"/>
+            <point key="canvasLocation" x="138" y="816"/>
         </scene>
     </scenes>
     <resources>
         <image name="Grp5000" width="708" height="222"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="APJ-BG-SPm"/>
-    </inferredMetricsTieBreakers>
 </document>

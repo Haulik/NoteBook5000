@@ -54,7 +54,7 @@ class Login {
             if error == nil {
                 print("user logged in")
  
-                self.fb.loadUserData()
+                //self.fb.loadUserData()
                     
                 caller.dismiss(animated: true, completion: nil)
             }else {
@@ -104,7 +104,7 @@ class Login {
     }
 
     
-    func authenticateUserAndConfigureView(caller:UIViewController) {
+    func authenticateUserAndConfigureView(caller:UIViewController, navController:UINavigationController) {
         let userEmail = Auth.auth().currentUser?.email
         
         if Auth.auth().currentUser == nil {
@@ -112,14 +112,15 @@ class Login {
                 caller.performSegue(withIdentifier: "goLogin", sender: self)
             }
         }
+            
         else if userEmail?.lowercased().contains("admin") == true{
             DispatchQueue.main.async {
-                caller.performSegue(withIdentifier: "goAdmin", sender: self)
+                guard let controller = navController.viewControllers[0] as? HomeController else {return}
+                controller.adminTest.isHidden = false
             }
             
-        }else{
-            fb.loadUserData()
         }
+            fb.loadUserData()
     }
     
     
