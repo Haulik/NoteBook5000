@@ -29,7 +29,7 @@
             <objects>
                 <viewController id="vQV-Nz-Mxh" customClass="AdminViewController" customModule="NoteBook5000" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2jC-Zk-NNl">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Admin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9s-t0-c0a">
@@ -359,6 +359,7 @@
                         <outlet property="welcomeLabel" destination="J21-VF-RYG" id="687-9f-MPJ"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="goLogin" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="dI9-HV-y9k"/>
                         <segue destination="jaB-bg-okA" kind="show" identifier="Netto" id="Yy3-Kn-vrx"/>
+                        <segue destination="vQV-Nz-Mxh" kind="presentation" identifier="goAdmin" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="APJ-BG-SPm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ehl-C2-lX6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -600,4 +601,7 @@
     <resources>
         <image name="Grp5000" width="708" height="222"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="APJ-BG-SPm"/>
+    </inferredMetricsTieBreakers>
 </document>

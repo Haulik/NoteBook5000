@@ -105,15 +105,16 @@ class Login {
 
     
     func authenticateUserAndConfigureView(caller:UIViewController) {
+        let userEmail = Auth.auth().currentUser?.email
         
         if Auth.auth().currentUser == nil {
             DispatchQueue.main.async {
                 caller.performSegue(withIdentifier: "goLogin", sender: self)
             }
         }
-        else if Auth.auth().currentUser?.email == "Admin"  {
+        else if userEmail?.lowercased().contains("admin") == true{
             DispatchQueue.main.async {
-                caller.performSegue(withIdentifier: "GoAdmin", sender: self)
+                caller.performSegue(withIdentifier: "goAdmin", sender: self)
             }
             
         }else{
