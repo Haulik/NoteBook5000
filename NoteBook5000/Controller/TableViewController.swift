@@ -26,19 +26,6 @@ class TableViewController: UITableViewController {
         self.tableView.register(CustomCell.self, forCellReuseIdentifier: "custom")
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 150
-        
-        if butikSender == "Netto" {
-            print("netto")
-        }
-            
-        else if butikSender == "Kvickly" {
-            print("Kvickly")
-        }
-            
-        else if butikSender == "Føtex" {
-            print("Føtex")
-        }
-        
         guard let navController = navigationController else {return}
         fb.startNoteListener(navController: navController)
     }
