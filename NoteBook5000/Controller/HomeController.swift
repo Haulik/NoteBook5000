@@ -15,7 +15,7 @@ import CoreLocation
 import UserNotifications
 
 
-var butikSender = 0
+var butikSender = ""
 
 class HomeController: UIViewController, UNUserNotificationCenterDelegate  {
     @IBOutlet weak var welcomeLabel: UILabel!
@@ -69,17 +69,17 @@ class HomeController: UIViewController, UNUserNotificationCenterDelegate  {
     
     //Netto knap
     @IBAction func NettoButton(_ sender: UIButton) {
-        butikSender = 0
+        butikSender = "Netto"
         self.performSegue(withIdentifier: "Netto", sender: self)
     }
     //Kvivkly Knap
     @IBAction func KvicklyButton(_ sender: UIButton) {
-        butikSender = 1
+        butikSender = "Kvickly"
         self.performSegue(withIdentifier: "Netto", sender: self)
     }
     //Føtex Knap
     @IBAction func FøtexButton(_ sender: UIButton) {
-        butikSender = 2
+        butikSender = "Føtex"
         self.performSegue(withIdentifier: "Netto", sender: self)
     }
 

@@ -122,8 +122,6 @@ class Login {
         }
             fb.loadUserData()
     }
-    
-    
 
 }
 

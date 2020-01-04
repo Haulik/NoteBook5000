@@ -42,7 +42,7 @@ class AdminViewController: UIViewController, UINavigationControllerDelegate, UII
     
     @IBAction func uploadPhotoPressed(_ sender: UIButton) {
         let randomID = UUID.init().uuidString
-        let uploadRef = Storage.storage().reference(withPath: "Picture/\(randomID).jpg")
+        let uploadRef = Storage.storage().reference(withPath: "Picture/\(butikSender)/\(randomID).jpg")
         guard let imageData =  ImageView.image?.jpegData(compressionQuality: 0.75) else {return}
         let uploadMetadata = StorageMetadata.init()
         let taskReference = uploadRef.putData(imageData, metadata: uploadMetadata) { (downloadMetadata, error) in

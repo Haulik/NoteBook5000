@@ -44,19 +44,19 @@ class TableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if butikSender == 0 {
+        if butikSender == "Netto" {
             print("netto")
             //Do something
             data = [CellData.init(image: UIImage(named: "Fugl"), message: "Jonathan is that you?"), CellData.init(image: UIImage(named: "Jeudan"), message: "How not to get fired"), CellData.init(image: UIImage(named: "Jeudan"), message: "How?"), CellData.init(image: UIImage(named: "Jeudan"), message: "How not to get fired")]
  
         }
-        else if butikSender == 1 {
-            print("Kvikly")
+        else if butikSender == "Kvickly" {
+            print("Kvickly")
             //Do somthing
             data = [CellData.init(image: UIImage(named: "Fugl"), message: "Thomas is that you?"), CellData.init(image: UIImage(named: "Jeudan"), message: "How not to get fired"), CellData.init(image: UIImage(named: "Jeudan"), message: "How?"), CellData.init(image: UIImage(named: "Jeudan"), message: "How not to get fired")]
         }
             
-        else if butikSender == 2 {
+        else if butikSender == "Føtex" {
             print("Føtex")
             //Do something
             LoadPicture()
