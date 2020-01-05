@@ -21,6 +21,7 @@
 		3063906F235C79E3009A2E76 /* NoteBook5000UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3063906E235C79E3009A2E76 /* NoteBook5000UITests.swift */; };
 		3063907D235C7B6C009A2E76 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3063907C235C7B6B009A2E76 /* GoogleService-Info.plist */; };
 		30639089235CBAFD009A2E76 /* DesingableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30639088235CBAFD009A2E76 /* DesingableView.swift */; };
+		30B5A29423C1E2D700AB5774 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B5A29323C1E2D700AB5774 /* TableViewCell.swift */; };
 		30B8BE0E2396653C00502B1F /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B8BE0D2396653C00502B1F /* TableViewController.swift */; };
 		30B8BE10239669C500502B1F /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B8BE0F239669C400502B1F /* CustomCell.swift */; };
 		30E330B0235D9DA900DB8648 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30E330AF235D9DA900DB8648 /* credentials.plist */; };
@@ -70,6 +71,7 @@
 		30639070235C79E3009A2E76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3063907C235C7B6B009A2E76 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		30639088235CBAFD009A2E76 /* DesingableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesingableView.swift; sourceTree = "<group>"; };
+		30B5A29323C1E2D700AB5774 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		30B8BE0D2396653C00502B1F /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		30B8BE0F239669C400502B1F /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		30E330AF235D9DA900DB8648 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				3019373223BE718F00D1D836 /* FirebaseRepo.swift */,
 				304A683023BF21270006F2E8 /* Login.swift */,
 				304A683223BF423E0006F2E8 /* Location.swift */,
+				30B5A29323C1E2D700AB5774 /* TableViewCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -514,6 +517,7 @@
 				30639089235CBAFD009A2E76 /* DesingableView.swift in Sources */,
 				304A683323BF423E0006F2E8 /* Location.swift in Sources */,
 				304A683123BF21270006F2E8 /* Login.swift in Sources */,
+				30B5A29423C1E2D700AB5774 /* TableViewCell.swift in Sources */,
 				30B8BE0E2396653C00502B1F /* TableViewController.swift in Sources */,
 				30639051235C79E1009A2E76 /* HomeController.swift in Sources */,
 				3063904D235C79E1009A2E76 /* AppDelegate.swift in Sources */,

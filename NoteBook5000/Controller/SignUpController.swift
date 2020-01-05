@@ -24,12 +24,15 @@ class SignUpController: UIViewController {
     //Register user
     @IBAction func registerPressed(_ sender: UIButton) {
         if let usr = createEmail.text, let pwd = createPassword.text, let usrname = userName.text {
-            if createPassword.text == createPasswordAgain.text{
-                fb.registrer(usr: usr, pwd: pwd, usrname: usrname, caller: self)
-                
-            }else{
+            if createPassword.text != createPasswordAgain.text{
                 fb.createAlert(title: "Error", message: "Password did not match!", caller: self)
+                return
             }
+            if usr.lowercased().contains("admin") == true || usrname.lowercased().contains("admin") == true {
+                fb.createAlert(title: "Error", message: "Email kam ikke indeholde 'admin'", caller: self)
+                return
+            }
+            fb.registrer(usr: usr, pwd: pwd, usrname: usrname, caller: self)
         }
     }
 }

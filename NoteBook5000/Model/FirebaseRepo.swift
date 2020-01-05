@@ -88,8 +88,9 @@ class FirebaseRepo {
             for document in snapshot!.documents {
 
                 if let tekst = document.data()["tekst"] as? String,
-                let imageName = document.data()["image"] as? String{
-                    self.downloadImage(filename: imageName, note: tekst, navController: navController)
+                let imageName = document.data()["image"] as? String,
+                    let title = document.data()["title"] as? String{
+                    self.downloadImage(filename: imageName, note: tekst, title: title, navController: navController)
                 }
             }
             
@@ -97,7 +98,7 @@ class FirebaseRepo {
         
     }
     
-    func downloadImage(filename:String, note:String, navController:UINavigationController)  {
+    func downloadImage(filename:String, note:String, title:String, navController:UINavigationController)  {
         // Create a reference with an initial file path and name
         let pathReference = Storage.storage().reference(withPath: filename)
         guard let controller = navController.viewControllers[1] as? TableViewController else {return}
@@ -108,7 +109,7 @@ class FirebaseRepo {
                 print("error downloading file \(error.debugDescription)")
             }else{
                 image = UIImage(data: data!)
-                controller.data.append(CellData.init(image: image, message: note, imageTekst: "Test"))
+                controller.data.append(CellData.init(title: title, message: note, image: image, imageTekst: "Test"))
                 print("success in downloading image \(image?.size)")
                 
             }

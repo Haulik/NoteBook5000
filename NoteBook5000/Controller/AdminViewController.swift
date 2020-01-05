@@ -13,6 +13,9 @@ class AdminViewController: UIViewController, UINavigationControllerDelegate, UII
 
     @IBOutlet weak var ImageView: UIImageView!
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var titleField: UITextField!
+    var imagePicker = UIImagePickerController()
+    var fb = FirebaseRepo()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,11 +44,17 @@ class AdminViewController: UIViewController, UINavigationControllerDelegate, UII
     }
     
     @IBAction func uploadPhotoPressed(_ sender: UIButton) {
+        
+        if textField.text == "" || titleField.text == "" || ImageView.image == nil {
+            fb.createAlert(title: "Error", message: "Skal have en title, tekst og et billed", caller: self)
+            return
+        }
+        
         let randomID = UUID.init().uuidString
         let imagePath = "Picture/\(butikAdmin)/\(randomID).jpg"
         let uploadRef = Storage.storage().reference(withPath: imagePath)
         
-        guard let imageData =  ImageView.image?.jpegData(compressionQuality: 0.75) else {return}
+        guard let imageData =  ImageView.image?.jpegData(compressionQuality: 1) else {return}
         let uploadMetadata = StorageMetadata.init()
         uploadRef.putData(imageData, metadata: uploadMetadata) { (downloadMetadata, error) in
             if let error = error {
@@ -71,8 +80,8 @@ class AdminViewController: UIViewController, UINavigationControllerDelegate, UII
     
     func uploadTekst(imagePath:String){
         
-        if let messageBody = textField.text {
-            Firestore.firestore().collection(butikAdmin).addDocument(data: ["tekst": messageBody, "image": imagePath ]) { (error) in
+        if let messageBody = textField.text, let title = titleField.text {
+            Firestore.firestore().collection(butikAdmin).addDocument(data: ["tekst": messageBody, "image": imagePath, "title": title ]) { (error) in
                 if let error = error{
                     print("There was an error saving data to Firestore, \(error.localizedDescription)")
                 } else {
@@ -80,6 +89,27 @@ class AdminViewController: UIViewController, UINavigationControllerDelegate, UII
                 }
             }
         }
+    }
+    
+    @IBAction func btnClicked() {
+
+        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
+            print("Button capture")
+
+            imagePicker.delegate = self
+            imagePicker.sourceType = .savedPhotosAlbum
+            imagePicker.allowsEditing = true
+
+            present(imagePicker, animated: true, completion: nil)
+        }
+    }
+
+    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
+        self.dismiss(animated: true, completion: { () -> Void in
+
+        })
+
+        ImageView.image = image
     }
     
     
