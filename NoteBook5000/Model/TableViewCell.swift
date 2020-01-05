@@ -22,4 +22,7 @@ class HeadlineTableViewCell: UITableViewCell {
     @IBOutlet weak var headlineTextLabel: UILabel!
     @IBOutlet weak var headlineImageView: UIImageView!
     
+    func segueTableView(caller:UIViewController){
+        caller.performSegue(withIdentifier: "tableView", sender: self)
+    }
 }

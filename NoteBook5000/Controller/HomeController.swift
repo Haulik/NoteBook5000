@@ -25,9 +25,10 @@ class HomeController: UIViewController, UNUserNotificationCenterDelegate  {
     
     var userName = ""
     let locationManager:CLLocationManager = CLLocationManager()
-    var lg = Login()
-    var lc = Location()
-    var fb = FirebaseRepo()
+    let lg = Login()
+    let lc = Location()
+    let fb = FirebaseRepo()
+    let tb = HeadlineTableViewCell()
     
     let geoFenceRegion:CLCircularRegion = CLCircularRegion(center: CLLocationCoordinate2DMake(44, 13), radius: 1000, identifier: "Netto")
     let geoFenceRegion2:CLCircularRegion = CLCircularRegion(center: CLLocationCoordinate2DMake(55, 13), radius: 1000, identifier: "Føtex")
@@ -71,22 +72,19 @@ class HomeController: UIViewController, UNUserNotificationCenterDelegate  {
     //Netto knap
     @IBAction func NettoButton(_ sender: UIButton) {
         butikSender = "Netto"
-        segueTableView()
+        tb.segueTableView(caller: self)
     }
     //Kvivkly Knap
     @IBAction func KvicklyButton(_ sender: UIButton) {
         butikSender = "Kvickly"
-        segueTableView()
+        tb.segueTableView(caller: self)
     }
     //Føtex Knap
     @IBAction func FøtexButton(_ sender: UIButton) {
         butikSender = "Føtex"
-        segueTableView()
+        tb.segueTableView(caller: self)
     }
     
-    func segueTableView(){
-        self.performSegue(withIdentifier: "tableView", sender: self)
-    }
 
 }
 

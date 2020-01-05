@@ -79,8 +79,8 @@ class FirebaseRepo {
         
     }
     
-    func startNoteListener(navController:UINavigationController) {
-        print("startNoteListener called")
+    func documentListener(navController:UINavigationController) {
+        print("documentListener called")
         guard let controller = navController.viewControllers[1] as? TableViewController else {return}
         Firestore.firestore().collection(butikSender).addSnapshotListener({ (snapshot, error) in
             print("received snapshot")
@@ -116,6 +116,48 @@ class FirebaseRepo {
             controller.tableView.reloadData()
         }
     }
+    
+    
+    
+    func uploadPhoto(messageBody:String, title:String, image:UIImage, caller:UIViewController){
+       // guard let messageBody = self.textField.text else {return}
+       // guard let title = self.titleField.text else {return}
+        let randomID = UUID.init().uuidString
+        let imagePath = "Picture/\(butikAdmin)/\(randomID).jpg"
+        let uploadRef = Storage.storage().reference(withPath: imagePath)
+        
+        guard let imageData =  image.jpegData(compressionQuality: 1) else {return}
+        let uploadMetadata = StorageMetadata.init()
+        uploadRef.putData(imageData, metadata: uploadMetadata) { (downloadMetadata, error) in
+            if let error = error {
+                print("Oh no, something went wrong! \(error.localizedDescription)")
+                return
+            }
+            print("Put is complete and I got this back: \(String(describing: downloadMetadata))")
+            
+            self.uploadTekst(imagePath: imagePath, messageBody: messageBody, title: title, caller: caller)
+            
+        }
+    }
+    
+    
+    func uploadTekst(imagePath:String, messageBody:String, title:String, caller:UIViewController){
+        
+            Firestore.firestore().collection(butikAdmin).addDocument(data: ["tekst": messageBody, "image": imagePath, "title": title ]) { (error) in
+                if let error = error{
+                    print("There was an error saving data to Firestore, \(error.localizedDescription)")
+                } else {
+                    print("Saved data")
+                    self.createAlert(title: "Succes", message: "You have had succesful uploaded", caller: caller)
+                }
+            }
+    }
+    
+    
+    
+    
+    
+    
     
     
     //laver en popup, med en "ok" knap

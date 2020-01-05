@@ -11,7 +11,7 @@ import Firebase
 
 class AdminViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
-    @IBOutlet weak var ImageView: UIImageView!
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var titleField: UITextField!
     var imagePicker = UIImagePickerController()
@@ -19,20 +19,8 @@ class AdminViewController: UIViewController, UINavigationControllerDelegate, UII
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        picker.dismiss(animated: true)
-        
-        guard let image = info[.editedImage] as? UIImage else {
-            print("No image found")
-            return
-        }
-        self.ImageView.image = image
-    }
     
     @IBAction func takePhotoPressed(_ sender: UIButton) {
         let vc = UIImagePickerController()
@@ -40,58 +28,25 @@ class AdminViewController: UIViewController, UINavigationControllerDelegate, UII
         vc.allowsEditing = true
         vc.delegate = self
         present(vc, animated: true)
-        //self.ImageView.image =
     }
     
     @IBAction func uploadPhotoPressed(_ sender: UIButton) {
         
-        if textField.text == "" || titleField.text == "" || ImageView.image == nil {
+        if textField.text == "" || titleField.text == "" || imageView.image == nil {
             fb.createAlert(title: "Error", message: "Skal have en title, tekst og et billed", caller: self)
             return
         }
         
-        let randomID = UUID.init().uuidString
-        let imagePath = "Picture/\(butikAdmin)/\(randomID).jpg"
-        let uploadRef = Storage.storage().reference(withPath: imagePath)
-        
-        guard let imageData =  ImageView.image?.jpegData(compressionQuality: 1) else {return}
-        let uploadMetadata = StorageMetadata.init()
-        uploadRef.putData(imageData, metadata: uploadMetadata) { (downloadMetadata, error) in
-            if let error = error {
-                print("Oh no, something went wrong! \(error.localizedDescription)")
-                return
-            }
-            print("Put is complete and I got this back: \(String(describing: downloadMetadata))")
-            
-            uploadRef.downloadURL { (url, error) in
-                if let error = error{
-                    print("Something went wrong! \(error.localizedDescription)")
-                    return
-                }
-                if let url = url {
-                    print("Here is your download URL: \(url.absoluteString)")
-                    self.textField.text = url.absoluteString
-                }
-            }
-            self.uploadTekst(imagePath: imagePath)
+        guard let messageBody = textField.text else {return}
+        guard let title = titleField.text else {return}
+        guard let image = imageView.image else {return}
+
+        fb.uploadPhoto(messageBody: messageBody, title: title, image: image, caller: self)
+          
         }
-         
-        }
+
     
-    func uploadTekst(imagePath:String){
-        
-        if let messageBody = textField.text, let title = titleField.text {
-            Firestore.firestore().collection(butikAdmin).addDocument(data: ["tekst": messageBody, "image": imagePath, "title": title ]) { (error) in
-                if let error = error{
-                    print("There was an error saving data to Firestore, \(error.localizedDescription)")
-                } else {
-                    print("Saved data")
-                }
-            }
-        }
-    }
-    
-    @IBAction func btnClicked() {
+    @IBAction func pickPhoto() {
 
         if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
             print("Button capture")
@@ -103,13 +58,16 @@ class AdminViewController: UIViewController, UINavigationControllerDelegate, UII
             present(imagePicker, animated: true, completion: nil)
         }
     }
-
-    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
-        self.dismiss(animated: true, completion: { () -> Void in
-
-        })
-
-        ImageView.image = image
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        picker.dismiss(animated: true)
+        
+        guard let image = info[.editedImage] as? UIImage else {
+            print("No image found")
+            return
+        }
+        self.imageView.image = image
     }
     
     

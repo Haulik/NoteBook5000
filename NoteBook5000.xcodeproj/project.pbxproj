@@ -23,7 +23,6 @@
 		30639089235CBAFD009A2E76 /* DesingableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30639088235CBAFD009A2E76 /* DesingableView.swift */; };
 		30B5A29423C1E2D700AB5774 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B5A29323C1E2D700AB5774 /* TableViewCell.swift */; };
 		30B8BE0E2396653C00502B1F /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B8BE0D2396653C00502B1F /* TableViewController.swift */; };
-		30B8BE10239669C500502B1F /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B8BE0F239669C400502B1F /* CustomCell.swift */; };
 		30E330B0235D9DA900DB8648 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30E330AF235D9DA900DB8648 /* credentials.plist */; };
 		30E330B2235DBC4300DB8648 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E330B1235DBC4300DB8648 /* LoginController.swift */; };
 		30E330B4235DBC9100DB8648 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E330B3235DBC9100DB8648 /* SignUpController.swift */; };
@@ -73,7 +72,6 @@
 		30639088235CBAFD009A2E76 /* DesingableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesingableView.swift; sourceTree = "<group>"; };
 		30B5A29323C1E2D700AB5774 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		30B8BE0D2396653C00502B1F /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		30B8BE0F239669C400502B1F /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		30E330AF235D9DA900DB8648 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
 		30E330B1235DBC4300DB8648 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		30E330B3235DBC9100DB8648 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
@@ -146,14 +144,10 @@
 				3063907E235C7E74009A2E76 /* Controller */,
 				3063904C235C79E1009A2E76 /* AppDelegate.swift */,
 				3063904E235C79E1009A2E76 /* SceneDelegate.swift */,
-				30639052235C79E1009A2E76 /* Main.storyboard */,
 				30639055235C79E2009A2E76 /* Assets.xcassets */,
-				30639057235C79E2009A2E76 /* LaunchScreen.storyboard */,
 				3063905A235C79E3009A2E76 /* Info.plist */,
 				3063907C235C7B6B009A2E76 /* GoogleService-Info.plist */,
 				30E330AF235D9DA900DB8648 /* credentials.plist */,
-				30639088235CBAFD009A2E76 /* DesingableView.swift */,
-				30B8BE0F239669C400502B1F /* CustomCell.swift */,
 			);
 			path = NoteBook5000;
 			sourceTree = "<group>";
@@ -202,6 +196,8 @@
 		30639080235C7EEB009A2E76 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				30639052235C79E1009A2E76 /* Main.storyboard */,
+				30639057235C79E2009A2E76 /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -209,6 +205,7 @@
 		30639081235C7EF6009A2E76 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				30639088235CBAFD009A2E76 /* DesingableView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -523,7 +520,6 @@
 				3063904D235C79E1009A2E76 /* AppDelegate.swift in Sources */,
 				3063904F235C79E1009A2E76 /* SceneDelegate.swift in Sources */,
 				30E330B2235DBC4300DB8648 /* LoginController.swift in Sources */,
-				30B8BE10239669C500502B1F /* CustomCell.swift in Sources */,
 				3019373323BE718F00D1D836 /* FirebaseRepo.swift in Sources */,
 				30E330B4235DBC9100DB8648 /* SignUpController.swift in Sources */,
 			);

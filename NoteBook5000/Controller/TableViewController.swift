@@ -17,7 +17,7 @@ class TableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         guard let navController = navigationController else {return}
-        fb.startNoteListener(navController: navController)
+        fb.documentListener(navController: navController)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

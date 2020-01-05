@@ -77,7 +77,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="btnClicked" destination="vQV-Nz-Mxh" eventType="touchUpInside" id="Acp-f2-kki"/>
+                                    <action selector="pickPhote" destination="vQV-Nz-Mxh" eventType="touchUpInside" id="Acp-f2-kki"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fqH-EV-bUw">
@@ -87,12 +87,12 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <viewLayoutGuide key="safeArea" id="Fje-nA-qib"/>
                     </view>
                     <navigationItem key="navigationItem" id="XED-6j-O37"/>
                     <connections>
-                        <outlet property="ImageView" destination="m0v-1A-qmJ" id="0Ua-SQ-jYr"/>
+                        <outlet property="imageView" destination="m0v-1A-qmJ" id="0Ua-SQ-jYr"/>
                         <outlet property="textField" destination="p4f-GF-6G9" id="l9w-7N-igD"/>
                         <outlet property="titleField" destination="fqH-EV-bUw" id="QJD-j5-CLf"/>
                     </connections>
@@ -386,35 +386,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ehl-C2-lX6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1921.7391304347827" y="75.669642857142847"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="rr6-L3-8Mg">
-            <objects>
-                <tableViewController id="jaB-bg-okA" customClass="TableViewController" customModule="NoteBook5000" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="e6o-kI-miy">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="2Rj-cy-a32">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Rj-cy-a32" id="dG0-E1-9a2">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="jaB-bg-okA" id="Bmf-d3-xcr"/>
-                            <outlet property="delegate" destination="jaB-bg-okA" id="EQa-K9-jr8"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="DeY-7V-sSH"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CdV-V1-mAu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3513" y="76"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="ecc-dI-7v7">
