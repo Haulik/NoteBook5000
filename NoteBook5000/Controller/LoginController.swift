@@ -11,15 +11,9 @@ import GoogleSignIn
 import FBSDKLoginKit
 
 class LoginController: UIViewController, GIDSignInUIDelegate{
+    
     @IBOutlet weak var loginEmail: UITextField!
     @IBOutlet weak var loginPassword: UITextField!
-    var lg = Login()
-    var fb = FirebaseRepo()
- 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

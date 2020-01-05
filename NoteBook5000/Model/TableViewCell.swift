@@ -9,13 +9,6 @@
 import Foundation
 import UIKit
 
-struct CellData {
-    var title: String
-    var message : String
-    var image : UIImage?
-    var imageTekst: String?
-}
-
 class HeadlineTableViewCell: UITableViewCell {
 
     @IBOutlet weak var headlineTitleLabel: UILabel!

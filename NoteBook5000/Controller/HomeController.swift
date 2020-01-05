@@ -16,27 +16,29 @@ import UserNotifications
 
 var butikSender = ""
 var butikAdmin = ""
+let lg = Login()
+let lc = Location()
+let fb = FirebaseRepo()
+let tb = HeadlineTableViewCell()
 
 class HomeController: UIViewController, UNUserNotificationCenterDelegate  {
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var adminTest: UIButton!
     
     var userName = ""
-    let locationManager:CLLocationManager = CLLocationManager()
-    let lg = Login()
-    let lc = Location()
-    let fb = FirebaseRepo()
-    let tb = HeadlineTableViewCell()
-    
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Clearer vores regions fra sidste build
         lc.stopMonitor()
+        
         lc.setRegion(caller: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         guard let navController = navigationController else {return}
         adminTest.isHidden = true
         lg.authenticateUserAndConfigureView(caller: self, navController: navController)

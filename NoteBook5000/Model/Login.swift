@@ -13,20 +13,17 @@ import FBSDKLoginKit
 
 class Login {
     
-    var fb = FirebaseRepo()
     var userName = ""
     
     //logger ud med en ja nej pop op
     func signOut(caller:UIViewController, navController:UINavigationController){
         
-
         guard let controller = navController.viewControllers[0] as? HomeController else {return}
         
         let title2 = "Sign out?"
         let message2 = "Are you sure you wanna sign out \(controller.userName)?"
         let alert = UIAlertController(title: title2, message: message2, preferredStyle: UIAlertController.Style.alert)
         
-          
           //Laver en alert, med YES/NO Knapper. (logger ud)
         alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: { (action) in
             do {
@@ -76,26 +73,28 @@ class Login {
             }
             
             let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.tokenString)
-            
+        
         Auth.auth().signIn(with: credential, completion: { (user, error) in
             if let error = error {
                 print("Login error: \(error.localizedDescription)")
+                // Alert hvis forbindelse til facebook api ikke kan lade sig gøre
                 let alertController = UIAlertController(title: "Login Error", message: error.localizedDescription, preferredStyle: .alert)
+                // Alert action
                 let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                 alertController.addAction(okayAction)
                 caller.present(alertController, animated: true, completion: nil)
-                          
+            
                 return
             }
             
-            //Gør klar til til set data
+            //Gør klar til at sende data
             guard let uid = user?.user.uid else { return }
             guard let email = user?.user.email else { return }
             guard let username = user?.user.displayName else { return }
 
-            let values = ["email": email, "username": username, "role": "Normal"]
+            let values = ["email": email, "username": username]
 
-            self.fb.setDatabase(uid: uid, values: values, caller: caller)
+            fb.setDatabase(uid: uid, values: values, caller: caller)
 
             }
         )}
@@ -103,31 +102,33 @@ class Login {
 
     
     func authenticateUserAndConfigureView(caller:UIViewController, navController:UINavigationController) {
+        
         let userEmail = Auth.auth().currentUser?.email
         
-        if Auth.auth().currentUser == nil {
-            DispatchQueue.main.async {
-                caller.performSegue(withIdentifier: "goLogin", sender: self)
-            }
+        if Auth.auth().currentUser == nil
+        {
+            caller.performSegue(withIdentifier: "goLogin", sender: self)
         }
+                   
+        else if userEmail?.lowercased().contains("admin") == true
+        {
             
-        else if userEmail?.lowercased().contains("admin") == true{
-            DispatchQueue.main.async {
-                guard let controller = navController.viewControllers[0] as? HomeController else {return}
-                controller.adminTest.isHidden = false
+            guard let controller = navController.viewControllers[0] as? HomeController else {return}
+            
+            controller.adminTest.isHidden = false
                 
-                if userEmail?.lowercased().contains("netto") == true {
-                    butikAdmin = "Netto"
-                }
-                if userEmail?.lowercased().contains("kvickly") == true {
-                    butikAdmin = "Kvickly"
-                }
-                if userEmail?.lowercased().contains("føtex") == true {
-                    butikAdmin = "Føtex"
-                }
-                
+            if userEmail?.lowercased().contains("netto") == true {
+                butikAdmin = "Netto"
             }
             
+            if userEmail?.lowercased().contains("kvickly") == true {
+                butikAdmin = "Kvickly"
+            }
+            
+            if userEmail?.lowercased().contains("føtex") == true {
+                butikAdmin = "Føtex"
+            }
+
         }
             fb.loadUserData()
     }
@@ -145,6 +146,7 @@ extension LoginController: GIDSignInDelegate {
         }
         
         guard let authentication = user.authentication else { return }
+        
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
         
         Auth.auth().signIn(with: credential) { (result, error) in
@@ -160,7 +162,7 @@ extension LoginController: GIDSignInDelegate {
             
             let values = ["email": email, "username": username, "role":"Normal"]
             
-            self.fb.setDatabase(uid: uid, values: values, caller: self)
+            fb.setDatabase(uid: uid, values: values, caller: self)
         }
     }
 }

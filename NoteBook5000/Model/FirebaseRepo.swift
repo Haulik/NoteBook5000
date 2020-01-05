@@ -16,9 +16,9 @@ class FirebaseRepo {
 
     
     //SignUp
-    func registrer(usr:String, pwd:String, usrname:String, caller: UIViewController) {
+    func registrer(email:String, pwd:String, usrname:String, caller: UIViewController) {
         
-        Auth.auth().createUser(withEmail: usr, password: pwd) { (result, error) in
+        Auth.auth().createUser(withEmail: email, password: pwd) { (result, error) in
             if let error = error {
                 print("Failed to sign up with error: ", error.localizedDescription)
                 self.createAlert(title: "Error", message: error.localizedDescription, caller: caller)
@@ -27,7 +27,7 @@ class FirebaseRepo {
             
             guard let uid = result?.user.uid else { return }
                         
-            let values = ["email": usr, "username": usrname]
+            let values = ["email": email, "username": usrname]
                         
             self.setDatabase(uid: uid, values: values, caller: caller, emailRegistrer: true)
         }
@@ -42,7 +42,7 @@ class FirebaseRepo {
             self.createAlert(title: "Error", message: error.localizedDescription, caller: caller)
             return
         }
-        print("succesfully signed user up..")
+        print("succesfully signed user up and uploaded user information to firestore")
         if emailRegistrer == false {
             caller.dismiss(animated: true, completion: nil)
         }else{
@@ -80,7 +80,9 @@ class FirebaseRepo {
         guard let controller = navController.viewControllers[1] as? TableViewController else {return}
         Firestore.firestore().collection(butikSender).addSnapshotListener({ (snapshot, error) in
             print("received snapshot")
+            
             controller.data.removeAll()
+            
             for document in snapshot!.documents {
 
                 if let tekst = document.data()["tekst"] as? String,
@@ -98,6 +100,7 @@ class FirebaseRepo {
         // Create a reference with an initial file path and name
         let pathReference = Storage.storage().reference(withPath: filename)
         guard let controller = navController.viewControllers[1] as? TableViewController else {return}
+        
         var image:UIImage?
         
         pathReference.getData(maxSize: 4000*4000) { (data, error) in
@@ -105,7 +108,7 @@ class FirebaseRepo {
                 print("error downloading file \(error.debugDescription)")
             }else{
                 image = UIImage(data: data!)
-                controller.data.append(CellData.init(title: title, message: note, image: image, imageTekst: "Test"))
+                controller.data.append(CellData.init(title: title, message: note, image: image))
                 print("success in downloading image \(image?.size)")
                 
             }
@@ -116,6 +119,7 @@ class FirebaseRepo {
     
     
     func uploadPhoto(messageBody:String, title:String, image:UIImage, caller:UIViewController){
+        
         let randomID = UUID.init().uuidString
         let imagePath = "Picture/\(butikAdmin)/\(randomID).jpg"
         let uploadRef = Storage.storage().reference(withPath: imagePath)

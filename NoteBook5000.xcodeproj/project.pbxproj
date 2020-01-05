@@ -29,6 +29,7 @@
 		65D0788D10284DEC9288E69F /* Pods_NoteBook5000Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E071A42FA36A88C2034DBAD /* Pods_NoteBook5000Tests.framework */; };
 		74D8F8B09A162CADC9314422 /* Pods_NoteBook5000_NoteBook5000UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2894932DA25100BBD24D09 /* Pods_NoteBook5000_NoteBook5000UITests.framework */; };
 		8F2F4717A3382F6DC4632007 /* Pods_NoteBook5000.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 011B498EB094BA172CCC7494 /* Pods_NoteBook5000.framework */; };
+		BC9124F023C228DB0041B11F /* CellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9124EF23C228DB0041B11F /* CellData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		AE2894932DA25100BBD24D09 /* Pods_NoteBook5000_NoteBook5000UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoteBook5000_NoteBook5000UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2BD33A506ABBFCF0ED4E963 /* Pods-NoteBook5000Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteBook5000Tests.release.xcconfig"; path = "Target Support Files/Pods-NoteBook5000Tests/Pods-NoteBook5000Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B7FFB1F74996A07D29CE227F /* Pods-NoteBook5000Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteBook5000Tests.debug.xcconfig"; path = "Target Support Files/Pods-NoteBook5000Tests/Pods-NoteBook5000Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		BC9124EF23C228DB0041B11F /* CellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellData.swift; sourceTree = "<group>"; };
 		E665E568C83B99FB9F796023 /* Pods-NoteBook5000-NoteBook5000UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoteBook5000-NoteBook5000UITests.debug.xcconfig"; path = "Target Support Files/Pods-NoteBook5000-NoteBook5000UITests/Pods-NoteBook5000-NoteBook5000UITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -189,6 +191,7 @@
 				304A683023BF21270006F2E8 /* Login.swift */,
 				304A683223BF423E0006F2E8 /* Location.swift */,
 				30B5A29323C1E2D700AB5774 /* TableViewCell.swift */,
+				BC9124EF23C228DB0041B11F /* CellData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -512,6 +515,7 @@
 			files = (
 				304A683523BF84110006F2E8 /* AdminViewController.swift in Sources */,
 				30639089235CBAFD009A2E76 /* DesingableView.swift in Sources */,
+				BC9124F023C228DB0041B11F /* CellData.swift in Sources */,
 				304A683323BF423E0006F2E8 /* Location.swift in Sources */,
 				304A683123BF21270006F2E8 /* Login.swift in Sources */,
 				30B5A29423C1E2D700AB5774 /* TableViewCell.swift in Sources */,

@@ -10,6 +10,7 @@ import UIKit
 
 @IBDesignable
 class DesignableView: UIView {
+    
     @IBInspectable var shadowColor: UIColor = UIColor.clear {
         didSet {
             layer.shadowColor = shadowColor.cgColor
@@ -34,4 +35,5 @@ class DesignableView: UIView {
         }
     }
 }
+
 

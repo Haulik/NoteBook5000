@@ -14,15 +14,10 @@ class AdminViewController: UIViewController, UINavigationControllerDelegate, UII
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var titleField: UITextField!
-    var imagePicker = UIImagePickerController()
-    var fb = FirebaseRepo()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    let imagePicker = UIImagePickerController()
     
     
-@IBAction func takePhotoPressed(_ sender: UIButton) {
+    @IBAction func takePhotoPressed(_ sender: UIButton) {
         let vc = UIImagePickerController()
         vc.sourceType = .camera
         vc.allowsEditing = true
@@ -70,7 +65,4 @@ class AdminViewController: UIViewController, UINavigationControllerDelegate, UII
         self.imageView.image = image
     }
     
-    
-    
-        
     }

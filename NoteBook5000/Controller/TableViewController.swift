@@ -10,11 +10,13 @@ import UIKit
 import Firebase
 
 class TableViewController: UITableViewController {
+    
     var data = [CellData]()
-    let fb = FirebaseRepo()
+   
         
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         guard let navController = navigationController else {return}
         fb.documentListener(navController: navController)
     }
@@ -23,10 +25,14 @@ class TableViewController: UITableViewController {
         return data.count
     }
 
+    
+    // Celle indstillinger med vores identifier "LabelCell"
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath) as! HeadlineTableViewCell
 
         let headline = data[indexPath.row]
+    
         cell.headlineTitleLabel?.text = headline.title
         cell.headlineTextLabel?.text = headline.message
         cell.headlineImageView?.image = headline.image
