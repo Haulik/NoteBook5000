@@ -22,7 +22,7 @@ class AdminViewController: UIViewController, UINavigationControllerDelegate, UII
     }
     
     
-    @IBAction func takePhotoPressed(_ sender: UIButton) {
+@IBAction func takePhotoPressed(_ sender: UIButton) {
         let vc = UIImagePickerController()
         vc.sourceType = .camera
         vc.allowsEditing = true
