@@ -12,7 +12,7 @@ import Firebase
 
 class TableViewController: UITableViewController {
     var data = [CellData]()
-    var fb = FirebaseRepo()
+    let fb = FirebaseRepo()
         
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

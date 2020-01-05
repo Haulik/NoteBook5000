@@ -24,15 +24,13 @@ class FirebaseRepo {
                 self.createAlert(title: "Error", message: error.localizedDescription, caller: caller)
                 return
             }
-                        
+            
             guard let uid = result?.user.uid else { return }
                         
-            let values = ["email": usr, "username": usrname, "role": "Normal"]
+            let values = ["email": usr, "username": usrname]
                         
             self.setDatabase(uid: uid, values: values, caller: caller, emailRegistrer: true)
-   
         }
-                                             
     }
 
     // Sender data op til databasen
@@ -135,7 +133,6 @@ class FirebaseRepo {
             
         }
     }
-    
     
     func uploadTekst(imagePath:String, messageBody:String, title:String, caller:UIViewController){
         
