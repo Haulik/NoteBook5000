@@ -9,7 +9,6 @@
 import UIKit
 import Firebase
 
-
 class TableViewController: UITableViewController {
     var data = [CellData]()
     let fb = FirebaseRepo()

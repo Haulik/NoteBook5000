@@ -7,13 +7,13 @@
 	<key>NSCameraUsageDescription</key>
 	<string>Trust us!</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Yes</string>
+	<string>We need your location</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Hej</string>
+	<string>We would like your location</string>
 	<key>NSLocationUsageDescription</key>
-	<string>hej2</string>
+	<string>Your location plz</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>hej3</string>
+	<string>Hej Jon og Oscar :)</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
