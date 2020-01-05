@@ -23,7 +23,8 @@ let tb = HeadlineTableViewCell()
 
 class HomeController: UIViewController, UNUserNotificationCenterDelegate  {
     @IBOutlet weak var welcomeLabel: UILabel!
-    @IBOutlet weak var adminTest: UIButton!
+    //@IBOutlet weak var adminTest: UIButton!
+    @IBOutlet weak var admin: UIBarButtonItem!
     
     var userName = ""
    
@@ -40,15 +41,15 @@ class HomeController: UIViewController, UNUserNotificationCenterDelegate  {
         super.viewWillAppear(animated)
         
         guard let navController = navigationController else {return}
-        adminTest.isHidden = true
+        admin.title = ""
+        admin.isEnabled = false
         lg.authenticateUserAndConfigureView(caller: self, navController: navController)
     }
     
-        
-    @IBAction func adminButton(_ sender: UIButton) {
+    @IBAction func adminBarButton(_ sender: UIBarButtonItem) {
         self.performSegue(withIdentifier: "goAdmin", sender: self)
     }
-
+    
     //Logger ud
     @IBAction func signOut(_ sender: Any) {
         guard let navController = navigationController else {return}

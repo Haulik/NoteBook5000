@@ -115,7 +115,8 @@ class Login {
             
             guard let controller = navController.viewControllers[0] as? HomeController else {return}
             
-            controller.adminTest.isHidden = false
+            controller.admin.isEnabled = true
+            controller.admin.title = "Admin"
                 
             if userEmail?.lowercased().contains("netto") == true {
                 butikAdmin = "Netto"
