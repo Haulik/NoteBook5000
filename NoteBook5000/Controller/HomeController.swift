@@ -14,14 +14,12 @@ import GoogleSignIn
 import CoreLocation
 import UserNotifications
 
-
 var butikSender = ""
 var butikAdmin = ""
 
 class HomeController: UIViewController, UNUserNotificationCenterDelegate  {
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var adminTest: UIButton!
-    
     
     var userName = ""
     let locationManager:CLLocationManager = CLLocationManager()
@@ -30,16 +28,12 @@ class HomeController: UIViewController, UNUserNotificationCenterDelegate  {
     let fb = FirebaseRepo()
     let tb = HeadlineTableViewCell()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         lc.stopMonitor()
         lc.setRegion(caller: self)
     }
-        
-    @IBAction func adminButton(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "goAdmin", sender: self)
-    }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -48,6 +42,10 @@ class HomeController: UIViewController, UNUserNotificationCenterDelegate  {
         lg.authenticateUserAndConfigureView(caller: self, navController: navController)
     }
     
+        
+    @IBAction func adminButton(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "goAdmin", sender: self)
+    }
 
     //Logger ud
     @IBAction func signOut(_ sender: Any) {
