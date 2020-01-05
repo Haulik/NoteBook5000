@@ -13,7 +13,7 @@ class Location {
     
     let locationManager:CLLocationManager = CLLocationManager()
     
-    func StopMonitor(){
+    func stopMonitor(){
         let monitoredRegions = locationManager.monitoredRegions
         
         for region in monitoredRegions{
@@ -44,11 +44,29 @@ class Location {
             }
         })
     }
+    
+    func setRegion(caller: CLLocationManagerDelegate){
+        
+        let geoFenceRegion:CLCircularRegion = CLCircularRegion(center: CLLocationCoordinate2DMake(44, 13), radius: 1000, identifier: "Netto")
+        let geoFenceRegion2:CLCircularRegion = CLCircularRegion(center: CLLocationCoordinate2DMake(55, 13), radius: 1000, identifier: "Føtex")
+        let geoFenceRegion3:CLCircularRegion = CLCircularRegion(center: CLLocationCoordinate2DMake(66, 13), radius: 1000, identifier: "Kvickly")
+        
+        locationManager.delegate = caller
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
+        locationManager.distanceFilter = 100
+            
+        locationManager.startMonitoring(for: geoFenceRegion)
+        locationManager.startMonitoring(for: geoFenceRegion2)
+        locationManager.startMonitoring(for: geoFenceRegion3)
+    }
+    
+    
 }
 
 extension HomeController: CLLocationManagerDelegate {
     
-    //Didupdate
+    //Did update
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 
         

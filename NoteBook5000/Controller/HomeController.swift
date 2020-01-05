@@ -30,24 +30,10 @@ class HomeController: UIViewController, UNUserNotificationCenterDelegate  {
     let fb = FirebaseRepo()
     let tb = HeadlineTableViewCell()
     
-    let geoFenceRegion:CLCircularRegion = CLCircularRegion(center: CLLocationCoordinate2DMake(44, 13), radius: 1000, identifier: "Netto")
-    let geoFenceRegion2:CLCircularRegion = CLCircularRegion(center: CLLocationCoordinate2DMake(55, 13), radius: 1000, identifier: "Føtex")
-    let geoFenceRegion3:CLCircularRegion = CLCircularRegion(center: CLLocationCoordinate2DMake(66, 13), radius: 1000, identifier: "Kvickly")
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //lg.authenticateUserAndConfigureView(caller: self, navController: navController)
-        lc.StopMonitor()
-        
-        locationManager.delegate = self
-        locationManager.requestAlwaysAuthorization()
-        locationManager.startUpdatingLocation()
-        locationManager.distanceFilter = 100
-            
-        locationManager.startMonitoring(for: geoFenceRegion)
-        locationManager.startMonitoring(for: geoFenceRegion2)
-        locationManager.startMonitoring(for: geoFenceRegion3)
-
+        lc.stopMonitor()
+        lc.setRegion(caller: self)
     }
         
     @IBAction func adminButton(_ sender: UIButton) {

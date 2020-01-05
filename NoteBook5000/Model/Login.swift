@@ -53,8 +53,6 @@ class Login {
         Auth.auth().signIn(withEmail: usr, password: pwd) { (result, error) in
             if error == nil {
                 print("user logged in")
- 
-                //self.fb.loadUserData()
                     
                 caller.dismiss(animated: true, completion: nil)
             }else {

@@ -45,7 +45,6 @@ class FirebaseRepo {
             return
         }
         print("succesfully signed user up..")
-        //self.loadUserData()
         if emailRegistrer == false {
             caller.dismiss(animated: true, completion: nil)
         }else{
@@ -67,7 +66,6 @@ class FirebaseRepo {
                 guard let controller = navController.viewControllers[0] as? HomeController else { return }
                 
                 controller.welcomeLabel.text = "Welcome \(username)"
-                //self.welcomeLabel.text = "Welcome \(username)"
                 controller.userName = username
                 print(username)
                 
@@ -120,8 +118,6 @@ class FirebaseRepo {
     
     
     func uploadPhoto(messageBody:String, title:String, image:UIImage, caller:UIViewController){
-       // guard let messageBody = self.textField.text else {return}
-       // guard let title = self.titleField.text else {return}
         let randomID = UUID.init().uuidString
         let imagePath = "Picture/\(butikAdmin)/\(randomID).jpg"
         let uploadRef = Storage.storage().reference(withPath: imagePath)
@@ -152,13 +148,6 @@ class FirebaseRepo {
                 }
             }
     }
-    
-    
-    
-    
-    
-    
-    
     
     //laver en popup, med en "ok" knap
     func createAlert (title:String, message:String, caller: UIViewController, afterConfirm: (() -> ())? = nil) {
