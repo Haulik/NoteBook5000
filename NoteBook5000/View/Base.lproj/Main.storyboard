@@ -356,7 +356,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhm-e0-IhY">
                                 <rect key="frame" x="16" y="452" width="382" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <state key="normal" title="Netto"/>
                                 <connections>
                                     <action selector="NettoButton:" destination="TtD-H5-smm" eventType="touchUpInside" id="Hbl-js-e2s"/>
@@ -409,7 +409,7 @@
                                             <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tuX-Sn-rw2">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tekst" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tuX-Sn-rw2">
                                             <rect key="frame" x="20" y="38" width="374" height="62"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="62" id="Jqh-lp-Lya"/>
@@ -425,14 +425,24 @@
                                                 <constraint firstAttribute="height" constant="280" id="K1P-6d-3z5"/>
                                             </constraints>
                                         </imageView>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3xL-4J-aQz">
+                                            <rect key="frame" x="348" y="2.5" width="66" height="34"/>
+                                            <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="66" id="CHd-fO-hJ2"/>
+                                                <constraint firstAttribute="height" constant="36.5" id="FOP-Tk-iJA"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                     <constraints>
                                         <constraint firstItem="tuX-Sn-rw2" firstAttribute="leading" secondItem="07O-Zi-ZwK" secondAttribute="leading" id="0w5-S2-GZF"/>
+                                        <constraint firstItem="3xL-4J-aQz" firstAttribute="top" secondItem="ZaV-zk-qgh" secondAttribute="top" constant="1" id="2Sp-UW-jGW"/>
                                         <constraint firstItem="07O-Zi-ZwK" firstAttribute="top" secondItem="ZaV-zk-qgh" secondAttribute="topMargin" id="Fia-u6-9GX"/>
                                         <constraint firstItem="07O-Zi-ZwK" firstAttribute="leading" secondItem="ZaV-zk-qgh" secondAttribute="leadingMargin" id="O70-z4-Qai"/>
                                         <constraint firstItem="Q8b-Nx-JqC" firstAttribute="leading" secondItem="ZaV-zk-qgh" secondAttribute="leading" id="UIA-po-6Of"/>
                                         <constraint firstAttribute="bottom" secondItem="Q8b-Nx-JqC" secondAttribute="bottom" id="Upv-ll-RqT"/>
+                                        <constraint firstAttribute="trailing" secondItem="3xL-4J-aQz" secondAttribute="trailing" id="VLT-0r-n2x"/>
                                         <constraint firstItem="tuX-Sn-rw2" firstAttribute="centerX" secondItem="Q8b-Nx-JqC" secondAttribute="centerX" id="e1F-u4-WnV"/>
                                         <constraint firstAttribute="trailing" secondItem="Q8b-Nx-JqC" secondAttribute="trailing" id="eTh-9R-gm7"/>
                                         <constraint firstItem="Q8b-Nx-JqC" firstAttribute="top" secondItem="tuX-Sn-rw2" secondAttribute="bottom" constant="8" id="eaG-sg-Qja"/>
@@ -663,5 +673,6 @@
     </scenes>
     <resources>
         <image name="Grp5000" width="708" height="222"/>
+        <image name="person" catalog="system" width="64" height="58"/>
     </resources>
 </document>
