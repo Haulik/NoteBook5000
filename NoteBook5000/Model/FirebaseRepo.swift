@@ -26,6 +26,7 @@ class FirebaseRepo {
             }
             
             guard let uid = result?.user.uid else { return }
+        
                         
             let values = ["email": email, "username": usrname]
                         

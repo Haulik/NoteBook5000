@@ -26,7 +26,7 @@ class HomeController: UIViewController, UNUserNotificationCenterDelegate  {
     //@IBOutlet weak var adminTest: UIButton!
     @IBOutlet weak var admin: UIBarButtonItem!
     
-    var userName = ""
+    var userName: String? = "fsefesf"
    
     override func viewDidLoad() {
         super.viewDidLoad()
